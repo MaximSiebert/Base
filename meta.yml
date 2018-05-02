@@ -1,0 +1,26 @@
+---
+name: Example
+description: Hello! This is an example theme to get you started on making great themes on Format.com.
+author: Format
+author_url: https://www.format.com
+support: This a place for you to help users of this theme and how they can keep in touch.
+
+skins:
+- name: Light
+  id: light
+- name: Dark
+  id: dark
+default_skin: light
+
+using_position:
+  right: 20
+  bottom: 20
+
+preview_images:
+  - path: preview_images/1.jpg
+
+mobile_preview_images:
+  - path: preview_images/1-mobile.jpg
+
+filter_attributes:
+  - vertical

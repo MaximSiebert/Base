@@ -1,0 +1,99 @@
+{% layout %}
+
+  {% theme_include 'partials/header' %}
+  <main class="container">
+    {% if page.is_homepage != true %}
+      <div class="page-title">
+        {% if page.parent %}
+          <a class="parent-link" href="{{ page.parent.url }}">{{ page.parent.name }}</a>
+          <span class="sep">/</span>
+        {% endif %}
+        {{ page.name }}
+      </div>
+      {% if page.parent %}
+        <div class="close-page">
+          <a href="{{ page.parent.url }}" class="close-button">Close</a>
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="assets-grid swiper-container">
+      <div class="swiper-wrapper">
+        {% if page.title %}
+          <div class="title-wrapper swiper-slide">
+            <div class="swiper-slide-container">
+              {% theme_include 'partials/title' %}
+            </div>
+          </div>
+        {% endif %}
+        {% theme_include 'partials/assets' %}
+        {% if page.is_homepage != true %}
+          <div class="swiper-slide asset text">
+            <div class="swiper-slide-container">
+              {% if page.parent %}
+                {% if page.next_nested_page %}
+                  <h2>
+                    Next – <a class="next-page-link" href="{{ page.parent.url }}{{ page.next_nested_page.url }}">{{ page.next_nested_page.name }}</a>
+                  </h2>
+                {% endif %}
+              {% else %}
+                <h2>
+                  <a class="link" href="/">
+                    Return Home
+                  </a>
+                </h2>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <!-- Add Pagination -->
+    {% if page.parent %}
+      {% if page.prev_nested_page %}
+        <div class="prev-link-wrapper">
+          <a class="prev-link" href="{{ page.parent.url }}{{ page.prev_nested_page.url }}">
+            <svg width="23" height="7" viewBox="0 0 23 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g id="Canvas" fill="none">
+                <g id="Arrow">
+                  <g id="Line (Stroke)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M 21 1L 0 1L 0 0L 21 0L 21 1Z" transform="translate(23 4) scale(-1)" fill="black"/>
+                  </g>
+                  <g id="Polygon">
+                    <path d="M 3.5 0L 6.53109 3.75L 0.468911 3.75L 3.5 0Z" transform="matrix(0 -1 1 0 0 7)" fill="black"/>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            {{ page.prev_nested_page.name }}
+          </a>
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="swiper-pagination"></div>
+    {% if page.parent %}
+      {% if page.next_nested_page %}
+          <div class="next-link-wrapper">
+            <a class="next-link" href="{{ page.parent.url }}{{ page.next_nested_page.url }}">
+              {{ page.next_nested_page.name }}
+              <svg width="23" height="7" viewBox="0 0 23 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Canvas" fill="none">
+                  <g id="Arrow">
+                    <g id="Line (Stroke)">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M 21 1L 0 1L 0 0L 21 0L 21 1Z" transform="translate(0 3)" fill="black"/>
+                    </g>
+                    <g id="Polygon">
+                      <path d="M 3.5 0L 6.53109 3.75L 0.468911 3.75L 3.5 0Z" transform="matrix(0 1 -1 0 23 0)" fill="black"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </a>
+          </div>
+      {% endif %}
+    {% endif %}
+  </main>
+
+{% endlayout %}

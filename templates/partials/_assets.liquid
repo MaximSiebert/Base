@@ -1,0 +1,67 @@
+{% for asset in page.assets %}
+  {% capture overlap %}{% if theme.gallery_style == 'Overlap' %}overlap {% endif %}{% endcapture %}
+  {% case asset.type %}
+      {% when 'image' %}
+          <div class="{{ overlap }}asset swiper-slide image" class="swiper-slide" data-hash="{{ forloop.index }}">
+            {% if theme.gallery_style == 'No Overlap with Dominant Color' %}
+              <div class="dominant-background" style="background: {{ asset.dominant_color }};"></div>
+            {% elsif theme.gallery_style == 'No Overlap with Background Color'  %}
+              <div class="dominant-background" style="background: {{ theme.background_color }};"></div>
+            {% endif %}
+            <div class="swiper-slide-container">
+                {% assign ratioWidth = asset.image_dimensions_1600x1200[0] %}
+                {% assign ratioHeight = asset.image_dimensions_1600x1200[1] %}
+                {% capture dominantColor %}{% if asset.dominant_color %}{{ asset.dominant_color }}{% else %}#eeeeee{% endif %}{% endcapture %}
+                {% capture orientation %}{% if ratioWidth > ratioHeight %}landscape{% elsif ratioHeight > ratioWidth %}portrait{% else %}square{% endif %}{% endcapture %}
+                <img data-sizes="auto" width="{{ ratioWidth }}" height="{{ ratioHeight }}" alt="{{ asset.alt_text }}" class="{{ orientation }} lazyload" data-src="{{ asset.image_url_1600x1200 }}" data-srcset="{{ asset | srcset: 'width' }}" data-parent-fit="contain" />
+                <canvas class="{{ orientation }} image-placeholder" width="{{ ratioWidth }}" height="{{ ratioHeight }}" style="background-color:{{ dominantColor }};"></canvas>
+            </div>
+            {% if asset.copy %}
+              <div class="caption">
+                <div class="caption-wrapper">
+                  <div class="caption-scroller">
+                    <div class="caption-inner-container">
+                      {{ asset.copy }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="details"><span>Details &#x2b;</span></button>
+            {% endif %}
+          </div>
+      {% when 'video' %}
+          <div class="asset swiper-slide video" class="swiper-slide" data-hash="{{ forloop.index }}">
+            <div class="swiper-slide-container">
+              {% if theme.gallery_type == "Masonry" or theme.gallery_type == "Grid" %}
+                <a data-fancybox="gallery" data-type="iframe" data-src="{{ asset.iframe_url }}">
+              {% endif %}
+              <img src="{{ asset.thumbnail_url_960x0 }}" alt="" />
+              {% if theme.gallery_type == "Masonry" or theme.gallery_type == "Grid" %}
+                </a>
+              {% endif %}
+            </div>
+            {% if asset.copy %}
+              <div class="caption">
+                <div class="caption-wrapper">
+                  <div class="caption-scroller">
+                    <div class="caption-inner-container">
+                      {{ asset.copy }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="details"><span>Details &#x2b;</span></button>
+            {% endif %}
+          </div>
+      {% when 'text' %}
+          <div class="asset swiper-slide text" data-hash="{{ forloop.index }}">
+            <div class="swiper-slide-container">
+              <div class="text-container">
+                <div class="text-inner-container">
+                  {{ asset.copy }}
+                </div>
+              </div>
+            </div>
+          </div>
+  {% endcase %}
+{% endfor %}

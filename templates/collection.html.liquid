@@ -1,0 +1,64 @@
+{% layout %}
+
+  {% theme_include 'partials/header' %}
+
+  <main class="container">
+
+    {% theme_include 'partials/title' %}
+    {% capture layout %}{% if theme.collection_layout == 'Grid' %}grid {% else %}text {% endif %}{% endcapture %}
+    <div class="{{ layout }}asset-container">
+    {% for asset in page.assets %}
+      {% if theme.collection_layout == 'Grid' %}
+        <div class="asset grid">
+          {% if theme.collection_dominant_color_hover == true %}
+            <div class="background" style="background: {{ asset.dominant_color }};"></div>
+          {% endif %}
+          <div class="asset-inner">
+            <a href="{%if asset.linked_page_type == 'page' or asset.linked_page_type == 'gallery' or asset.linked_page_type == 'content' %}{% unless asset.is_title_page %}{{ page.url }}{% endunless %}{% endif %}{{ asset.link_url }}"{% if asset.open_in_new_window %} target="_blank"{% endif %}>
+              <img data-srcset="{{ asset.image_url_800x800 }}" class="lazyload" data-sizes="auto" alt="{{ asset.alt_text }}" />
+              {% if asset.copy %}
+                <div class="title">{{ asset.copy }}</div>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      {% else %}
+        <div class="asset text">
+          {% if theme.collection_dominant_color_hover == true %}
+            <div class="background" style="background: {{ asset.dominant_color }};"></div>
+          {% endif %}
+          <div class="img-wrapper">
+            <img data-srcset="{{ asset.image_url_1600x0 }}" class="lazyload" data-sizes="auto" alt="{{ asset.alt_text }}" />
+          </div>
+          <div class="asset-inner">
+            <a href="{%if asset.linked_page_type == 'page' or asset.linked_page_type == 'gallery' or asset.linked_page_type == 'content' %}{% unless asset.is_title_page %}{{ page.url }}{% endunless %}{% endif %}{{ asset.link_url }}"{% if asset.open_in_new_window %} target="_blank"{% endif %}>
+              {% if asset.copy %}
+                <div class="text-wrapper">
+                  <div class="title">{{ asset.copy }}</div>
+                  <div class="view-link">
+                    View all
+                    <svg width="23" height="7" viewBox="0 0 23 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="Canvas" fill="none">
+                        <g id="Arrow">
+                          <g id="Line (Stroke)">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 21 1L 0 1L 0 0L 21 0L 21 1Z" transform="translate(0 3)" fill="white"/>
+                          </g>
+                          <g id="Polygon">
+                            <path d="M 3.5 0L 6.53109 3.75L 0.468911 3.75L 3.5 0Z" transform="matrix(0 1 -1 0 23 0)" fill="white"/>
+                          </g>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+
+  </main>
+
+{% endlayout %}

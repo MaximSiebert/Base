@@ -1,0 +1,17 @@
+{% capture logo_text %}{{ theme.logo_text | newline_to_br }}{% endcapture %}
+{% capture logo %}
+    {% if theme.logo_type_toggle == "image" %}
+        {% if theme.logo_image %}
+            {% if theme.logo_trim %}
+                <img src="{{ theme.logo_image_trimmed }}" alt="{{ site.name }}" />
+            {% else %}
+                <img src="{{ theme.logo_image }}" alt="{{ site.name }}" />
+            {% endif %}
+        {% else %}
+            {{ logo_text }}
+        {% endif %}
+    {% else %}
+        {{ logo_text }}
+    {% endif %}
+{% endcapture %}
+<h1 class="logo"><a href="{{ paths.root }}">{{ logo }}</a></h1>

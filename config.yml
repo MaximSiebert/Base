@@ -1,0 +1,21 @@
+---
+
+history:
+  1: Initial version.
+
+hidden: false
+version: 1
+api_version: 2
+support:
+  # feature_name: min version supporting it
+  external_link_target_control: 1
+  content_pages: 1
+  grouped_vars: 1
+  blog: 1
+  responsive: 1
+  client_access: 1
+  sales: 1
+  parent_page: 1
+  base_vars: 1
+
+can_automatically_upgrade_to_versions: [1]

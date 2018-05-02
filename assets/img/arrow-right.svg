@@ -1,0 +1,13 @@
+<svg width="23" height="7" viewBox="0 0 23 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="Arrow">
+<g id="Line (Stroke)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 21 1L 0 1L 0 0L 21 0L 21 1Z" transform="translate(0 3)" fill="white"/>
+</g>
+<g id="Polygon">
+<path d="M 3.5 0L 6.53109 3.75L 0.468911 3.75L 3.5 0Z" transform="matrix(0 1 -1 0 23 0)" fill="white"/>
+</g>
+</g>
+</g>
+</svg>
+

@@ -1,0 +1,25 @@
+{% layout %}
+  
+  {% theme_include 'partials/header' %}
+  
+  <main class="container">
+    {% if page.is_homepage != true %}
+      <div class="page-title">
+        {% if page.parent %}
+          <a class="parent-link" href="{{ page.parent.url }}">{{ page.parent.name }}</a>
+          <span class="sep">/</span>
+        {% endif %}
+        {{ page.name }}
+      </div>
+      {% if page.parent %}
+        <div class="close-page">
+          <a href="{{ page.parent.url }}" class="close-button">Close</a>
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="content">
+      {% format_content %}
+    </div>
+  </main>
+  
+{% endlayout %}

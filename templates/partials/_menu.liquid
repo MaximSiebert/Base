@@ -1,0 +1,29 @@
+<nav class="menu">
+  <button class="close menu-close">Close</button>
+  <div class="menu-wrapper">
+    <ul>
+      {% for item in menu_items %}
+        {% case item.type %}
+          {% when 'category' %}
+            <li class="category {% if item.id == page.category_id %} selected{% endif %}">
+              <a>{{ item.name }}</a>
+              <ul>
+              {% for nested in item.pages %}
+              <li class="item{% if nested.id == page.id %} selected{% endif %}">
+                <a href="{{ nested.href }}"{% if nested.type == 'link' and nested.open_in_new_window %} target='_blank'{% endif %}>
+                {{ nested.name }}
+              </a>
+            </li>
+          {% endfor %}
+            </ul>
+            </li>
+          {% else %}
+            <li class="item item{% if item.id == page.id %} selected{% endif %}">
+              <a href="{{ item.href }}" {% if item.type == 'link' and item.open_in_new_window %} target="_blank"{% endif %}>{{ item.name }}</a>
+            </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+  </div>
+  {% theme_include 'partials/footer' %}
+</nav>

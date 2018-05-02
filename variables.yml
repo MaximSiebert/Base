@@ -1,0 +1,575 @@
+base_variables:
+
+  - id: base_background_color
+    kind: color
+    value:
+      light: "#FAFAFA"
+      dark: "#111111"
+    affected_variables:
+      - background_color
+      - collection_title_overlay_color
+
+  - id: base_accent_color
+    kind: color
+    value:
+      light: "#000"
+      dark: "#ffffff"
+    affected_variables:
+      - link_typography
+      - link_typography.hover.color
+      - menu_typography.hover.color
+      - social_links_typography
+      - social_links_typography.hover.color
+
+  - id: base_text_color
+    kind: color
+    value:
+      light: "#111111"
+      dark: "#ffffff"
+    affected_variables:
+      - text_typography
+      - menu_typography
+      - headline_typography
+      - footer_typography
+      - collection_header_headings_typography
+      - collection_header_typography
+      - collection_caption_typography
+      - gallery_caption_typography
+      - blog_title_typography
+      - blog_body_typography
+
+  - id: base_heading_font
+    kind: typography
+    value:
+      font-family: Aften Screen Bold
+      font-weight: normal
+    affected_variables:
+      - headline_typography
+      - blog_title_typography
+      - collection_header_headings_typography
+      - collection_caption_typography
+
+  - id: base_body_font
+    kind: typography
+    value:
+      font-family: Aften Screen Regular
+    affected_variables:
+      - text_typography
+      - menu_typography
+      - gallery_caption_typography
+      - collection_header_typography
+      - blog_title_typography
+      - blog_body_typography
+      - footer_typography
+
+  - id: base_font_size
+    kind: relative_font_size
+    notes: Proportionally adjust the size of all your fonts
+    affected_variables:
+      - text_typography
+      - headline_typography
+      - menu_typography
+      - collection_header_headings_typography
+      - collection_header_typography
+      - collection_caption_typography
+      - gallery_caption_typography
+      - blog_title_typography
+      - blog_body_typography
+      - blog_caption_typography
+      - footer_typography
+      - social_links_typography
+
+variables:
+
+  - id: background_color
+    label: "Background Color"
+    kind: color
+    notes: The background color of your site
+    value:
+      light: "#541206"
+      dark: "#111111"
+
+  # --- Logo ---
+
+  - id: logo_type_toggle
+    label: Logo Type
+    skip_drawer_check: true
+    kind: logo_toggle
+    notes: "This determines if the logo image should be used, if present"
+    value: text
+    values:
+      - text
+      - image
+
+  - id: logo_image
+    label: Logo Image
+    kind: image
+    notes: The logo image displayed on your menu.
+    value:
+
+  - id: logo_text
+    label: Text
+    kind: text
+    notes: The text displayed if there is no logo image.
+    value: Ellen Smith
+
+  - id: logo_trim
+    label: Trim Logo Background
+    kind: boolean
+    notes: Removes the extra space around your logo.
+    value: false
+
+  - id: logo_size
+    label: Logo Size
+    kind: percent_slider
+    value: 50
+
+  - id: logo_typography
+    kind: typography
+    value:
+      color:
+        light: "#ffffff"
+        dark: "#ffffff"
+      font-family: "PT Serif"
+      font-weight: normal
+      font-size: 14
+      font-style: normal
+      text-decoration: none
+      opacity: 1
+      hover:
+        color: "#ffffff"
+        text-decoration: none
+        opacity: .7
+
+
+  # --- Typography ---
+
+  - id: text_typography
+    kind: typography
+    label: Body Text
+    value:
+      color:
+        light: "#fff"
+        dark: "#cccccc"
+      font-family: "PT Serif"
+      font-size: 14
+      line-height: 1.5
+
+  - id: headline_typography
+    label: Heading Text
+    kind: typography
+    value:
+      color:
+        light: "#FFFFFF"
+        dark: "#cccccc"
+      font-family: "Nobile"
+      font-size: 36
+      font-weight: bold
+
+# ----------------- Links -----------------
+      
+  - id: link_typography
+    label: Link
+    kind: typography
+    value:
+      color:
+        light: "#fff"
+        dark: "#cccccc"
+      font-style: normal
+      font-weight: normal
+      opacity: .5
+      text-decoration: none
+      hover:
+        color: "#fff"
+        text-decoration: none
+        opacity: 1
+
+# --- Footer ---
+
+  - id: post_text
+    label: Footer Text
+    kind: text
+    notes: This text is displayed in your footer at the bottom of a page.
+    value: Copyright &copy; All rights reserved.
+
+  - id: footer_typography
+    label: Footer Text
+    kind: typography
+    value:
+      color:
+        light: "#fff"
+        dark: "#cccccc"
+      font-family: "PT Serif"
+      font-size: 14
+
+# ----------------- Site Menu -----------------
+
+  - id: menu_typography
+    label: Site Menu Link
+    kind: typography
+    value:
+      color:
+        light: "#fff"
+        dark: "#cccccc"
+      font-family: "Nobile"
+      font-size: 36
+      font-weight: normal
+      line-height: 1.2
+      hover:
+        color: "#fff"
+        text-decoration: underline
+      selected:
+        color: "#fff"
+        text-decoration: none
+
+  - id: menu_category_typography
+    label: Submenu Link
+    kind: typography
+    value:
+      font-family: "PT Serif"
+      font-size: 18
+      font-weight: normal
+      opacity: ".6"
+      color:
+        light: "#fff"
+        dark: "#cccccc"
+      hover:
+        color: "#fff"
+        text-decoration: underline
+      selected:
+        color: "#fff"
+        text-decoration: underline
+
+  - id: menu_position
+    label: Site Menu Items Position
+    kind: select
+    value: Right
+    values:
+      - Left
+      - Center
+      - Right
+
+  - id: menu_background_color
+    label: Menu Background Color
+    kind: color
+    value:
+      light: "#000"
+      dark: "#cccccc"
+
+# ----------------- Gallery -----------------
+
+  - id: gallery_caption_typography
+    label: Caption
+    kind: typography
+    value:
+      font-family: "PT Serif"
+      color: "#FFFFFF"
+      font-size: 18
+      line-height: 1.5
+
+  - id: gallery_text_element
+    label: Text Element
+    kind: typography
+    value:
+      font-family: "PT Serif"
+      color: "#FFFFFF"
+      font-size: 18
+      line-height: 1.5
+
+  - id: gallery_style
+    kind: select
+    label: Gallery Style
+    value:
+      light: Overlap
+      dark: No Overlap with Dominant Color
+    values:
+      - Overlap
+      - No Overlap with Dominant Color
+      - No Overlap with Background Color
+
+# ----------------- Collection -----------------
+
+  - id: collection_header_typography
+    label: Header Text
+    kind: typography
+    value:
+      color:
+        light: "#FFFFFF"
+        dark: "#FFFFFF"
+      font-family: "PT Serif"
+      font-style: normal
+      font-size: 18
+      line-height: 1.4
+
+  - id: collection_header_headings_typography
+    label: Header Text Headings
+    kind: typography
+    value:
+      color:
+        light: "#FFFFFF"
+        dark: "#FFFFFF"
+      font-family: "Nobile"
+      font-style: normal
+      font-weight: normal
+      font-size: 42
+      line-height: 1.4
+
+  - id: collection_caption_typography
+    label: Page Link
+    kind: typography
+    value:
+      color:
+        light: "#FFFFFF"
+        dark: "#cccccc"
+      font-family: "PT Serif"
+      font-style: normal
+      font-weight: normal
+      font-size: 14
+      line-height: 1.4
+
+  - id: collection_caption_typography_alignment
+    kind: select
+    label: Page Link Alignment
+    value:
+      light: Left
+      dark: Center
+    values:
+      - Left
+      - Center
+
+  - id: collection_dominant_color_hover
+    label: "Show Dominant Color on Hover"
+    kind: boolean
+    notes: Shows or hides the Dominant color background on hover.
+    value: true
+
+  - id: collection_layout
+    kind: select
+    label: Collection Layout
+    value:
+      light: Text
+      dark: Text
+    values:
+      - Grid
+      - Text
+
+# ----------------- Social -----------------
+
+  - id: social_links_typography
+    label: Social Network Link
+    kind: typography
+    value:
+      color:
+        light: "#fff"
+        dark: "#999999"
+      font-size: 14
+      font-weight: normal
+      text-decoration: none
+      opacity: 1
+      hover:
+        color:
+          light: "#fff"
+          dark: "#cccccc"
+        text-decoration: none
+        opacity: .7
+
+  - id: social_links_style
+    label: Link Style
+    kind: select
+    values:
+      - Icon
+      - Text
+    value: Text
+
+  - id: icon1
+    kind: select
+    label: "Social Network"
+    values:
+      - None
+      - Twitter
+      - Facebook
+      - LinkedIn
+      - Google+
+      - Instagram
+      - Pinterest
+      - Tumblr
+      - Flickr
+      - YouTube
+      - Vimeo
+      - IMDb
+      - SoundCloud
+      - Behance
+      - Dribbble
+      - 500px
+    value: Twitter
+
+  - id: icon1text
+    label: "Link"
+    kind: string
+    notes: "Paste the entire URL here including 'http://'"
+    value: https://twitter.com/useformat
+
+  - id: icon2
+    kind: select
+    label: "Social Network"
+    values:
+      - None
+      - Twitter
+      - Facebook
+      - LinkedIn
+      - Google+
+      - Instagram
+      - Pinterest
+      - Tumblr
+      - Flickr
+      - YouTube
+      - Vimeo
+      - IMDb
+      - SoundCloud
+      - Behance
+      - Dribbble
+      - 500px
+    value: Facebook
+
+  - id: icon2text
+    label: "Link"
+    kind: string
+    notes: "Paste the entire URL here including 'http://'"
+    value: https://facebook.com/useformat
+
+  - id: icon3
+    kind: select
+    label: "Social Network"
+    values:
+      - None
+      - Twitter
+      - Facebook
+      - LinkedIn
+      - Google+
+      - Instagram
+      - Pinterest
+      - Tumblr
+      - Flickr
+      - YouTube
+      - Vimeo
+      - IMDb
+      - SoundCloud
+      - Behance
+      - Dribbble
+      - 500px
+    value: LinkedIn
+
+  - id: icon3text
+    label: "Link"
+    kind: string
+    notes: "Paste the entire URL here including 'http://'"
+    value: https://www.linkedin.com/company/format-inc-/
+
+  - id: icon4
+    kind: select
+    label: "Social Network"
+    values:
+      - None
+      - Twitter
+      - Facebook
+      - LinkedIn
+      - Google+
+      - Instagram
+      - Pinterest
+      - Tumblr
+      - Flickr
+      - YouTube
+      - Vimeo
+      - IMDb
+      - SoundCloud
+      - Behance
+      - Dribbble
+      - 500px
+    value: None
+
+  - id: icon4text
+    label: "Link"
+    kind: string
+    notes: "Paste the entire URL here including 'http://'"
+
+  - id: icon5
+    kind: select
+    label: "Social Network"
+    values:
+      - None
+      - Twitter
+      - Facebook
+      - LinkedIn
+      - Google+
+      - Instagram
+      - Pinterest
+      - Tumblr
+      - Flickr
+      - YouTube
+      - Vimeo
+      - IMDb
+      - SoundCloud
+      - Behance
+      - Dribbble
+      - 500px
+    value: None
+
+  - id: icon5text
+    label: "Link"
+    kind: string
+    notes: "Paste the entire URL here including 'http://'"
+
+  - id: show_social_sharing
+    label: "Show Share Button"
+    kind: boolean
+    notes: Shows or hides the Share Button.
+    value: true
+
+# ----------------- Blog -----------------
+
+  - id: blog_title_typography
+    label: Post Title
+    kind: typography
+    value:
+      font-family: Freight Text Pro Book
+      color:
+        light: "#FFFFFF"
+        dark: "#cccccc"
+      font-size: 36
+      font-style: normal
+      font-weight: bold
+      opacity: .5
+      hover:
+        text-decoration: none
+        opacity: 1
+        color:
+          light: "#FFFFFF"
+          dark: "#eeeeee"
+
+  - id: blog_body_typography
+    label: Post Body Text
+    kind: typography
+    value:
+      font-family: Freight Text Pro Book
+      color:
+        light: "#FFFFFF"
+        dark: "#cccccc"
+      line-height: 1.7
+      font-size: 18
+
+  - id: blog_caption_typography
+    label: Image Caption
+    kind: typography
+    value:
+      font-family: Freight Text Pro Book
+      font-size: 14
+
+  - id: blog_images_slideshow_color
+    label: Slideshow Background Color
+    kind: select
+    values:
+      - Dark
+      - Light
+    value:
+      light: Light
+      dark: Dark
