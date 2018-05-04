@@ -16,6 +16,19 @@
         </div>
       {% endif %}
     {% endif %}
+
+    <button class="index-button">
+      Index
+    </button>
+
+    {% capture index %}{% if theme.gallery_index == true %}active {% endif %}{% endcapture %}
+    <section class="{{ index }}gallery-index">
+      <div class="index-scroller">
+        <div class="index-container">
+          {% theme_include 'partials/assets_index' %}
+        </div>
+      </div>
+    </section>
     <div class="assets-grid swiper-container">
       <div class="swiper-wrapper">
         {% if page.title %}

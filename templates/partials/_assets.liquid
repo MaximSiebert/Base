@@ -2,7 +2,7 @@
   {% capture overlap %}{% if theme.gallery_style == 'Overlap' %}overlap {% endif %}{% endcapture %}
   {% case asset.type %}
       {% when 'image' %}
-          <div class="{{ overlap }}asset swiper-slide image" class="swiper-slide" data-hash="{{ forloop.index }}">
+          <div class="{{ overlap }}asset swiper-slide image" data-hash="{{ forloop.index }}">
             {% if theme.gallery_style == 'No Overlap with Dominant Color' %}
               <div class="dominant-background" style="background: {{ asset.dominant_color }};"></div>
             {% elsif theme.gallery_style == 'No Overlap with Background Color'  %}
@@ -30,7 +30,7 @@
             {% endif %}
           </div>
       {% when 'video' %}
-          <div class="asset swiper-slide video" class="swiper-slide" data-hash="{{ forloop.index }}">
+          <div class="{{ overlap }}asset swiper-slide video" data-hash="{{ forloop.index }}">
             <div class="swiper-slide-container">
               {% if theme.gallery_type == "Masonry" or theme.gallery_type == "Grid" %}
                 <a data-fancybox="gallery" data-type="iframe" data-src="{{ asset.iframe_url }}">

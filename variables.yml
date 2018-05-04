@@ -276,6 +276,12 @@ variables:
       font-size: 18
       line-height: 1.5
 
+  - id: gallery_index
+    label: "Show gallery index before gallery"
+    kind: boolean
+    notes: Shows or hides the gallery index.
+    value: false
+
   - id: gallery_style
     kind: select
     label: Gallery Style

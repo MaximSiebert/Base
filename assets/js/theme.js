@@ -13,8 +13,8 @@ window.Theme = window.Theme || {
     this.initJSForPageType();
     this.Menu.toggle();
     this.CollectionTitle.hover();
+    this.GalleryIndex.click();
     this.Caption.toggle();
-    this.Close.close();
     this.Turbolinks.init();
   },
   initJSForPageType: function() {
@@ -96,14 +96,25 @@ window.Theme.Caption = window.Theme.Caption || {
   }
 };
 
-// Initialize menu show/hide toggle behaviour
+// Initialize caption show/hide toggle behaviour
 
-window.Theme.Close = window.Theme.Close || {
-  close: function () {
-    // $('.close-button').on('click', function(e){
-    //     e.preventDefault();
-    //     window.history.back();
-    // });
+window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
+  click: function () {
+    $("html").on("click", ".asset.index", function () {
+      var hash = $(this).data('hash');
+      swiper.slideTo(hash)
+      $('.gallery-index').removeClass('active');
+      $(".index-button").text('Index')
+    });
+    $("html").on("click", ".index-button", function () {
+      if ($('.gallery-index').hasClass('active')) {
+        $('.gallery-index').removeClass("active");
+        $(this).text('Index')
+      } else {
+        $('.gallery-index').addClass("active");
+        $(this).text('Close')
+      }
+    });
   }
 };
 
@@ -148,4 +159,11 @@ var swiper = new Swiper('.swiper-container', {
 
 $(document).on("DOMContentLoaded", function() {
   Theme.init();
+
+  // Remove index on page load if # is in url
+  
+  if(window.location.hash) {
+    $('.gallery-index').removeClass('active');
+    $(".index-button").text('Index')
+  }
 });
