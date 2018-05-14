@@ -3,7 +3,20 @@
   {% theme_include 'partials/header' %}
 
   <main class="container">
-
+    {% if page.is_homepage != true %}
+      <div class="page-title fade-out">
+        {% if page.parent %}
+          <a class="parent-link" href="{{ page.parent.url }}">{{ page.parent.name }}</a>
+          <span class="sep">/</span>
+        {% endif %}
+        {{ page.name }}
+      </div>
+      {% if page.parent %}
+        <div class="close-page fade-out">
+          <a href="{{ page.parent.url }}" class="close-button hamburger hamburger-close"></a>
+        </div>
+      {% endif %}
+    {% endif %}
     {% theme_include 'partials/title' %}
     {% capture layout %}{% if theme.collection_layout == 'Grid' %}grid {% else %}text {% endif %}{% endcapture %}
     <div class="{{ layout }}asset-container">
@@ -11,16 +24,23 @@
       {% if theme.collection_layout == 'Grid' %}
         <div class="asset grid">
           {% if theme.collection_dominant_color_hover == true %}
-            <div class="background" style="background: {{ asset.dominant_color }};"></div>
+            <div class="background fade-out" style="background: {{ asset.dominant_color }};"></div>
           {% endif %}
           <div class="asset-inner">
+            {% assign ratioWidth = asset.image_dimensions_800x800[0] %}
+            {% assign ratioHeight = asset.image_dimensions_800x800[1] %}
+            {% capture dominantColor %}{% if asset.dominant_color %}{{ asset.dominant_color }}{% else %}#eeeeee{% endif %}{% endcapture %}
+            {% capture orientation %}{% if ratioWidth > ratioHeight %}landscape{% elsif ratioHeight > ratioWidth %}portrait{% else %}square{% endif %}{% endcapture %}
             <a href="{%if asset.linked_page_type == 'page' or asset.linked_page_type == 'gallery' or asset.linked_page_type == 'content' %}{% unless asset.is_title_page %}{{ page.url }}{% endunless %}{% endif %}{{ asset.link_url }}"{% if asset.open_in_new_window %} target="_blank"{% endif %}>
+              <canvas class="{{ orientation }} image-placeholder" width="{{ ratioWidth }}" height="{{ ratioHeight }}" style="background-color:{{ dominantColor }};"></canvas>
               <img data-srcset="{{ asset.image_url_800x800 }}" class="lazyload" data-sizes="auto" alt="{{ asset.alt_text }}" />
-              {% if asset.copy %}
-                <div class="title">{{ asset.copy }}</div>
-              {% endif %}
             </a>
           </div>
+          {% if asset.copy %}
+            <div class="title-wrapper fade-out">
+              <div class="title">{{ asset.copy }}</div>
+            </div>
+          {% endif %}
         </div>
       {% else %}
         <div class="asset text">
@@ -28,12 +48,19 @@
             <div class="background" style="background: {{ asset.dominant_color }};"></div>
           {% endif %}
           <div class="img-wrapper">
-            <img data-srcset="{{ asset.image_url_1600x0 }}" class="lazyload" data-sizes="auto" alt="{{ asset.alt_text }}" />
+            {% assign ratioWidth = asset.image_dimensions_1600x0[0] %}
+            {% assign ratioHeight = asset.image_dimensions_1600x0[1] %}
+            {% capture dominantColor %}{% if asset.dominant_color %}{{ asset.dominant_color }}{% else %}#eeeeee{% endif %}{% endcapture %}
+            {% capture orientation %}{% if ratioWidth > ratioHeight %}landscape{% elsif ratioHeight > ratioWidth %}portrait{% else %}square{% endif %}{% endcapture %}
+            <div class="relative-wrapper">
+              <canvas class="{{ orientation }} image-placeholder" width="{{ ratioWidth }}" height="{{ ratioHeight }}" style="background-color:{{ dominantColor }};"></canvas>
+              <img data-srcset="{{ asset.image_url_1600x0 }}" class="lazyload fade-out" data-sizes="auto" alt="{{ asset.alt_text }}" />
+            </div>
           </div>
           <div class="asset-inner">
             <a href="{%if asset.linked_page_type == 'page' or asset.linked_page_type == 'gallery' or asset.linked_page_type == 'content' %}{% unless asset.is_title_page %}{{ page.url }}{% endunless %}{% endif %}{{ asset.link_url }}"{% if asset.open_in_new_window %} target="_blank"{% endif %}>
               {% if asset.copy %}
-                <div class="text-wrapper">
+                <div class="text-wrapper fade-out">
                   <div class="title">{{ asset.copy }}</div>
                   <div class="view-link">
                     View all

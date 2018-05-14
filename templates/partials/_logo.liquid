@@ -14,4 +14,7 @@
         {{ logo_text }}
     {% endif %}
 {% endcapture %}
-<h1 class="logo"><a href="{{ paths.root }}">{{ logo }}</a></h1>
+<div class="logo-wrapper">
+    <button class="hamburger hamburger-menu nav-hamburger mobile-menu-toggle-trigger"></button>
+    <h1 class="logo"><a href="{{ paths.root }}">{{ logo }}</a></h1>
+</div>

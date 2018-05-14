@@ -5,7 +5,7 @@ window.Theme = window.Theme || {
     container: $(".container"),
     header: $(".header"),
     body: $("body"),
-    menuToggle: $(".mobile-menu-toggle"),
+    menuToggle: $(".mobile-menu-toggle-trigger"),
     menuClose: $(".menu-close"),
   },
   init: function() {
@@ -43,19 +43,31 @@ window.Theme.Turbolinks = window.Theme.Turbolinks || {
     $(window).on("page:load", this.onPageLoad.bind(this));
     $(window).on("page:restore", this.onRestore.bind(this));
   },
-  onBeforeChange: function(e) {},
+  onBeforeChange: function(e) {
+    $("html").addClass("is-changing");
+    Turbolinks.visit(e.originalEvent.data.url);
+    if ($('body').hasClass('active')) {
+      $('body').removeClass('active');
+    }
+  },
   onUpdate: function(e) {
     window.Theme.init();
   },
-  onPageLoad: function(e) {},
-  onRestore: function(e) {}
+  onPageLoad: function(e) {
+    setTimeout(function() {
+      $("html").removeClass("hide-assets");
+      $("html").removeClass("is-changing");
+    }, 500);
+  },
+  onRestore: function(e) {
+  }
 };
 
 // Initialize menu show/hide toggle behaviour
 
 window.Theme.Menu = window.Theme.Menu || {
   toggle: function() {
-    $("html").on("click", ".mobile-menu-toggle", function () {
+    $("html").on("click", ".mobile-menu-toggle-trigger", function () {
       Theme.$.body.toggleClass("active");
     });
     $("html").on("click", ".menu-close", function () {
@@ -71,8 +83,17 @@ window.Theme.CollectionTitle = window.Theme.CollectionTitle || {
     $(".asset").hover(
       function () {
         $(this).siblings().children('.asset-inner').css('opacity', '.3');
+        $('.title-element').css('opacity', '.3');
       }, function() {
         $(this).siblings().children('.asset-inner').css('opacity', '1');
+        $('.title-element').css('opacity', '1');
+      }
+    );
+    $(".asset.index").hover(
+      function () {
+        $(this).siblings().css('opacity', '.3');
+      }, function() {
+        $(this).siblings().css('opacity', '1');
       }
     );
   }
@@ -85,11 +106,11 @@ window.Theme.Caption = window.Theme.Caption || {
     $("html").on("click", ".details", function () {
       if ($(this).hasClass('active')) {
         $(this).removeClass("active");
-        $(this).children('span').text('Details +')
+        $(this).children('span').text('+')
         $(this).siblings('.caption').removeClass("active");
       } else {
         $(this).addClass("active");
-        $(this).children('span').text('Close −')
+        $(this).children('span').text('−')
         $(this).siblings('.caption').addClass("active");
       }
     });
@@ -104,15 +125,15 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
       var hash = $(this).data('hash');
       swiper.slideTo(hash)
       $('.gallery-index').removeClass('active');
-      $(".index-button").text('Index')
+      $(".index-button").removeClass('active');
     });
     $("html").on("click", ".index-button", function () {
       if ($('.gallery-index').hasClass('active')) {
         $('.gallery-index').removeClass("active");
-        $(this).text('Index')
+        $(this).removeClass('active');
       } else {
         $('.gallery-index').addClass("active");
-        $(this).text('Close')
+        $(this).addClass('active');
       }
     });
   }
@@ -123,7 +144,25 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
 window.Theme.Gallery = window.Theme.Gallery || {
   init: function() {
     this.respVideo();
+    this.overlayVideo();
     this.fancybox();
+  },
+  overlayVideo: function() {
+    // Video overlays
+    var video = $(".video"),
+        videoOverlay = $(".video-overlay");
+
+    videoOverlay.click(function(e) {
+      e.preventDefault();
+      $(this)
+        .parent(".video")
+        .addClass("playing");
+      $(this)
+        .parent(".video")
+        .find("iframe")[0].src +=
+        "&autoplay=1";
+      $('body').addClass('video-playing');
+    });
   },
   respVideo: function() {
     reframe("iframe");
@@ -155,6 +194,12 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+swiper.on('slideChange', function () {
+  $('.caption').removeClass('active');
+  $('.details').children('span').text('+');
+  $('.details').removeClass('active');
+});
+
 // Initialize object on DOM load
 
 $(document).on("DOMContentLoaded", function() {
@@ -164,6 +209,6 @@ $(document).on("DOMContentLoaded", function() {
   
   if(window.location.hash) {
     $('.gallery-index').removeClass('active');
-    $(".index-button").text('Index')
+    $(".index-button").removeClass('active');
   }
 });

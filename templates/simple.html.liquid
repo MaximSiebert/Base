@@ -2,7 +2,7 @@
   
   {% theme_include 'partials/header' %}
   
-  <main class="container">
+  <main class="container fade-out">
     {% if page.is_homepage != true %}
       <div class="page-title">
         {% if page.parent %}
@@ -13,7 +13,7 @@
       </div>
       {% if page.parent %}
         <div class="close-page">
-          <a href="{{ page.parent.url }}" class="close-button">Close</a>
+          <a href="{{ page.parent.url }}" class="close-button hamburger hamburger-close"></a>
         </div>
       {% endif %}
     {% endif %}

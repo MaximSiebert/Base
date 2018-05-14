@@ -1,5 +1,5 @@
 <nav class="menu">
-  <button class="close menu-close">Close</button>
+  <button class="close menu-close hamburger hamburger-close"></button>
   <div class="menu-wrapper">
     <ul>
       {% for item in menu_items %}
@@ -23,6 +23,9 @@
             </li>
         {% endcase %}
       {% endfor %}
+      <div class="mobile-footer">
+        {% theme_include 'partials/footer' %}
+      </div>
     </ul>
   </div>
   {% theme_include 'partials/footer' %}
