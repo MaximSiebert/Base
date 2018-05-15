@@ -5,13 +5,14 @@ drawers:
       - id: advanced
         variables:
           - menu_position
-          - gallery_type
-          - gallery_fit_images
-          - gallery_caption_alignment
-          - collection_title_position
-          - collection_thumbnails_space
-          - collection_thumbnail_size
-          - collection_thumbnail_style
+          - gallery_index
+          - gallery_style
+          - gallery_dominant_color
+          - gallery_arrow_color
+          - gallery_page_navigation
+          - collection_caption_typography_alignment
+          - collection_dominant_color_hover
+          - collection_layout
           - post_text
 
   - id: website_logo
@@ -41,11 +42,11 @@ drawers:
           - footer_typography
           - text_typography
           - background_color
+          - menu_background_color
           - gallery_caption_typography
           - collection_header_headings_typography
           - collection_header_typography
           - collection_caption_typography
-          - collection_title_overlay_color
           - blog_title_typography
           - blog_body_typography
           - blog_images_slideshow_color
@@ -100,6 +101,8 @@ groups:
       - menu_position
       - menu_typography
       - menu_category_typography
+      - menu_text
+      - menu_background_color
 
   - id: heading
     variables:
@@ -121,21 +124,21 @@ groups:
   - id: gallery
     variables:
       - gallery_caption_typography
-      - gallery_caption_alignment
       - gallery_text_element
-      - gallery_fit_images
-      - gallery_type
+      - gallery_index
+      - gallery_style
+      - gallery_dominant_color
+      - gallery_arrow_color
+      - gallery_page_navigation
 
   - id: collection
     variables:
       - collection_header_headings_typography
       - collection_header_typography
       - collection_caption_typography
-      - collection_title_position
-      - collection_title_overlay_color
-      - collection_thumbnails_space
-      - collection_thumbnail_size
-      - collection_thumbnail_style
+      - collection_caption_typography_alignment
+      - collection_dominant_color_hover
+      - collection_layout
 
   - id: blog
     variables:

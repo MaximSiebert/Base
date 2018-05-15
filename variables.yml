@@ -7,7 +7,7 @@ base_variables:
       dark: "#1b1b1b"
     affected_variables:
       - background_color
-      - collection_title_overlay_color
+      - menu_background_color
 
   - id: base_accent_color
     kind: color

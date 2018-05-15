@@ -160,25 +160,7 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
 window.Theme.Gallery = window.Theme.Gallery || {
   init: function() {
     this.respVideo();
-    this.overlayVideo();
     this.fancybox();
-  },
-  overlayVideo: function() {
-    // Video overlays
-    var video = $(".video"),
-        videoOverlay = $(".video-overlay");
-
-    // videoOverlay.click(function(e) {
-    //   e.preventDefault();
-    //   $(this)
-    //     .parent(".video")
-    //     .addClass("playing");
-    //   $(this)
-    //     .parent(".video")
-    //     .find("iframe")[0].src +=
-    //     "&autoplay=1";
-    //   $('body').addClass('video-playing');
-    // });
   },
   respVideo: function() {
     reframe("iframe");
