@@ -41,7 +41,9 @@ base_variables:
   - id: base_heading_font
     kind: typography
     value:
-      font-family: Nobile
+      font-family: 
+        light: Big Caslon FB Roman
+        dark: Nobile
       font-weight: normal
     affected_variables:
       - headline_typography
@@ -52,7 +54,9 @@ base_variables:
   - id: base_body_font
     kind: typography
     value:
-      font-family: Times New Roman
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
     affected_variables:
       - text_typography
       - menu_typography
@@ -130,7 +134,9 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Times New Roman"
+      font-family:
+        light: Big Caslon FB Roman
+        dark: Times New Roman
       font-weight: normal
       font-size: 14
       font-style: normal
@@ -153,7 +159,9 @@ variables:
       color:
         light: "#444444"
         dark: "#ffffff"
-      font-family: "Times New Roman"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       font-size: 14
       line-height: 1.5
 
@@ -164,7 +172,9 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Nobile"
+      font-family:
+        light: Big Caslon FB Roman
+        dark: Nobile
       font-size: 36
       font-weight: bold
 
@@ -203,7 +213,9 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Times New Roman"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       font-size: 14
 
 # ----------------- Site Menu -----------------
@@ -215,7 +227,9 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Nobile"
+      font-family:
+        light: Big Caslon FB Roman
+        dark: Nobile
       font-size: 36
       font-weight: normal
       line-height: 1.2
@@ -240,7 +254,9 @@ variables:
     label: Submenu Link
     kind: typography
     value:
-      font-family: "Times New Roman"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       font-size: 18
       font-weight: normal
       opacity: ".6"
@@ -282,7 +298,7 @@ variables:
     kind: color
     value:
       light: "#FFFFFF"
-      dark: "#5c5c5c"
+      dark: "#5E503F"
 
 # ----------------- Gallery -----------------
 
@@ -290,7 +306,9 @@ variables:
     label: Caption
     kind: typography
     value:
-      font-family: "Times New Roman"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       color: 
         light: "#444444"
         dark: "#FFFFFF"
@@ -301,7 +319,9 @@ variables:
     label: Text Element
     kind: typography
     value:
-      font-family: "Times New Roman"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       color:
         light: "#444444"
         dark: "#FFFFFF"
@@ -360,10 +380,12 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Times New Roman"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       font-style: normal
       font-size: 18
-      line-height: 1.4
+      line-height: 1.6
 
   - id: collection_header_headings_typography
     label: Header Text Headings
@@ -372,7 +394,9 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Nobile"
+      font-family:
+        light: Big Caslon FB Roman
+        dark: Nobile
       font-style: normal
       font-weight: normal
       font-size: 42
@@ -385,7 +409,9 @@ variables:
       color:
         light: "#444444"
         dark: "#FFFFFF"
-      font-family: "Nobile"
+      font-family:
+        light: Big Caslon FB Roman
+        dark: Nobile
       font-style: normal
       font-weight: normal
       font-size: 60
@@ -605,7 +631,9 @@ variables:
     label: Post Title
     kind: typography
     value:
-      font-family: Times New Roman
+      font-family:
+        light: Big Caslon FB Roman
+        dark: Times New Roman
       color:
         light: "#444444"
         dark: "#FFFFFF"
@@ -624,7 +652,9 @@ variables:
     label: Post Body Text
     kind: typography
     value:
-      font-family: Times New Roman
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       color:
         light: "#444444"
         dark: "#FFFFFF"
@@ -635,7 +665,9 @@ variables:
     label: Image Caption
     kind: typography
     value:
-      font-family: Times New Roman
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
       font-size: 14
 
   - id: blog_images_slideshow_color

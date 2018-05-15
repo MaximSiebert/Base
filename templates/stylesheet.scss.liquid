@@ -943,7 +943,7 @@ body.gallery {
   top: 0;
   right: 0;
   bottom: 0;
-  background: {{ theme.background_color }};
+  background: darken({{ theme.background_color }}, 2%);
   transition: $transition-4;
   transform: translateY(100%);
   &.active {
@@ -1014,10 +1014,10 @@ body.gallery {
       right: 0;
       height: 50px;
       background: {{ theme.background_color }};
-      background: -moz-linear-gradient(top, rgba({{ theme.background_color | color_to_rgb }},0) 0%, {{ theme.background_color }} 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba({{ theme.background_color | color_to_rgb }},0) 0%, {{ theme.background_color }} 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba({{ theme.background_color | color_to_rgb }},0) 0%, {{ theme.background_color }} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ theme.background_color }}', endColorstr='{{ theme.background_color }}',GradientType=0 ); /* IE6-9 */
+      background: -moz-linear-gradient(top, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, darken({{ theme.background_color }}, 2%) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, darken({{ theme.background_color }}, 2%) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, darken({{ theme.background_color }}, 2%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='darken({{ theme.background_color }}, 2%)', endColorstr='darken({{ theme.background_color }}, 2%)',GradientType=0 ); /* IE6-9 */
     }
     @media #{$breakpoint-not-small} {
       max-height: 195px;
@@ -1117,7 +1117,7 @@ body.gallery {
         opacity: .7;
       {% else %}
         background: #fff;
-        opacity: .6;
+        opacity: .8;
       {% endif %}
     }
   {% endif %}
@@ -1455,7 +1455,7 @@ body.listing {
         opacity: .7;
       {% else %}
         background: #fff;
-        opacity: .6;
+        opacity: .8;
       {% endif %}
     }
   }

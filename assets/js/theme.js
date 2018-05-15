@@ -11,14 +11,14 @@ window.Theme = window.Theme || {
   init: function() {
     this.Menu.init();
     this.Turbolinks.init();
+    this.GalleryIndex.init();
+    this.Caption.init();
     this.reload();
   },
   reload: function() {
     Theme.themeData = _4ORMAT_DATA;
     this.initJSForPageType();
     this.CollectionTitle.hover();
-    this.GalleryIndex.click();
-    this.Caption.toggle();
   },
   initJSForPageType: function() {
     var pageType = this.normalizedPageType();
@@ -80,7 +80,6 @@ window.Theme.Menu = window.Theme.Menu || {
         $("body").addClass("active");
       }
     });
-
     $("html").on("click", ".menu-close", function () {
       $("body").removeClass("active");
     });
@@ -113,6 +112,9 @@ window.Theme.CollectionTitle = window.Theme.CollectionTitle || {
 // Initialize caption show/hide toggle behaviour
 
 window.Theme.Caption = window.Theme.Caption || {
+  init: function() {
+    this.toggle();
+  },
   toggle: function () {
     $("html").on("click", ".details", function () {
       if ($(this).hasClass('active')) {
@@ -131,6 +133,9 @@ window.Theme.Caption = window.Theme.Caption || {
 // Initialize caption show/hide toggle behaviour
 
 window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
+  init: function() {
+    this.click();
+  },
   click: function () {
     $("html").on("click", ".asset.index", function () {
       var hash = $(this).data('hash');
