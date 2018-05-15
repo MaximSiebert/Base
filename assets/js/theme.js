@@ -9,13 +9,16 @@ window.Theme = window.Theme || {
     menuClose: $(".menu-close"),
   },
   init: function() {
+    this.Menu.init();
+    this.Turbolinks.init();
+    this.reload();
+  },
+  reload: function() {
     Theme.themeData = _4ORMAT_DATA;
     this.initJSForPageType();
-    this.Menu.toggle();
     this.CollectionTitle.hover();
     this.GalleryIndex.click();
     this.Caption.toggle();
-    this.Turbolinks.init();
   },
   initJSForPageType: function() {
     var pageType = this.normalizedPageType();
@@ -51,7 +54,7 @@ window.Theme.Turbolinks = window.Theme.Turbolinks || {
     }
   },
   onUpdate: function(e) {
-    window.Theme.init();
+    window.Theme.reload();
   },
   onPageLoad: function(e) {
     setTimeout(function() {
@@ -66,12 +69,20 @@ window.Theme.Turbolinks = window.Theme.Turbolinks || {
 // Initialize menu show/hide toggle behaviour
 
 window.Theme.Menu = window.Theme.Menu || {
+  init: function() {
+    this.toggle();
+  },
   toggle: function() {
     $("html").on("click", ".mobile-menu-toggle-trigger", function () {
-      Theme.$.body.toggleClass("active");
+      if ($("body").hasClass("active")) {
+        $("body").removeClass("active");
+      } else {
+        $("body").addClass("active");
+      }
     });
+
     $("html").on("click", ".menu-close", function () {
-      Theme.$.body.toggleClass("active");
+      $("body").removeClass("active");
     });
   }
 };
