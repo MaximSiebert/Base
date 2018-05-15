@@ -52,10 +52,12 @@
             {% assign ratioHeight = asset.image_dimensions_1600x0[1] %}
             {% capture dominantColor %}{% if asset.dominant_color %}{{ asset.dominant_color }}{% else %}#eeeeee{% endif %}{% endcapture %}
             {% capture orientation %}{% if ratioWidth > ratioHeight %}landscape{% elsif ratioHeight > ratioWidth %}portrait{% else %}square{% endif %}{% endcapture %}
-            <div class="relative-wrapper">
-              <canvas class="{{ orientation }} image-placeholder" width="{{ ratioWidth }}" height="{{ ratioHeight }}" style="background-color:{{ dominantColor }};"></canvas>
-              <img data-srcset="{{ asset.image_url_1600x0 }}" class="lazyload fade-out" data-sizes="auto" alt="{{ asset.alt_text }}" />
-            </div>
+            <a href="{%if asset.linked_page_type == 'page' or asset.linked_page_type == 'gallery' or asset.linked_page_type == 'content' %}{% unless asset.is_title_page %}{{ page.url }}{% endunless %}{% endif %}{{ asset.link_url }}"{% if asset.open_in_new_window %} target="_blank"{% endif %}>
+              <div class="relative-wrapper">
+                <canvas class="{{ orientation }} image-placeholder" width="{{ ratioWidth }}" height="{{ ratioHeight }}" style="background-color:{{ dominantColor }};"></canvas>
+                <img data-srcset="{{ asset.image_url_1600x0 }}" class="lazyload fade-out" data-sizes="auto" alt="{{ asset.alt_text }}" />
+              </div>
+            </a>
           </div>
           <div class="asset-inner">
             <a href="{%if asset.linked_page_type == 'page' or asset.linked_page_type == 'gallery' or asset.linked_page_type == 'content' %}{% unless asset.is_title_page %}{{ page.url }}{% endunless %}{% endif %}{{ asset.link_url }}"{% if asset.open_in_new_window %} target="_blank"{% endif %}>

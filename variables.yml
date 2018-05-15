@@ -137,7 +137,9 @@ variables:
       font-family:
         light: Big Caslon FB Roman
         dark: Times New Roman
-      font-weight: normal
+      font-weight: 
+        light: bold
+        dark: light
       font-size: 14
       font-style: normal
       text-decoration: none

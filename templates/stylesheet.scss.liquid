@@ -16,11 +16,11 @@ $breakpoint-not-small: 'screen and (min-width: 749px)' !default;
 $breakpoint-medium: 'screen and (min-width: 750px) and (max-width: 1023px)' !default;
 $breakpoint-large: 'screen and (min-width: 1024px)' !default;
 
-$transition-1: all .7s cubic-bezier(0.165, 0.84, 0.44, 1);
+$transition-1: all .7s cubic-bezier(0.370, 0.875, 0.505, 1);
 $transition-2: all 0.15s ease;
 $transition-3: all .1s ease;
-$transition-4: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-$transition-5: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+$transition-4: all 1s cubic-bezier(0.370, 0.875, 0.505, 1);
+$transition-5: all .4s cubic-bezier(0.370, 0.875, 0.505, 1);
 
 /*
 ------------------------------------------------------------------
@@ -1370,7 +1370,6 @@ body.listing {
       }
     }
     .img-wrapper {
-      pointer-events: none;
       transition: $transition-1;
       position: relative;
       display: -webkit-box;
@@ -1411,6 +1410,7 @@ body.listing {
         left: 30px;
         position: fixed;
         opacity: 0;
+        pointer-events: none;
       }
     }
     .text-wrapper {
