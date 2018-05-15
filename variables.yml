@@ -139,7 +139,7 @@ variables:
         dark: Times New Roman
       font-weight: 
         light: bold
-        dark: light
+        dark: normal
       font-size: 14
       font-style: normal
       text-decoration: none
@@ -340,12 +340,17 @@ variables:
     kind: select
     label: Gallery Style
     value:
-      light: No Overlap with Dominant Color
+      light: Overlap
       dark: Overlap
     values:
       - Overlap
-      - No Overlap with Dominant Color
-      - No Overlap with Background Color
+      - No Overlap
+
+  - id: gallery_dominant_background
+    label: "Show dominant background color for every image"
+    kind: boolean
+    notes: Shows or hides the dominant background color for every image.
+    value: true
 
   - id: gallery_dominant_color
     kind: select

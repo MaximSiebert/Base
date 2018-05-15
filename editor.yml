@@ -7,6 +7,7 @@ drawers:
           - menu_position
           - gallery_index
           - gallery_style
+          - gallery_dominant_background
           - gallery_dominant_color
           - gallery_arrow_color
           - gallery_page_navigation
@@ -127,6 +128,7 @@ groups:
       - gallery_text_element
       - gallery_index
       - gallery_style
+      - gallery_dominant_background
       - gallery_dominant_color
       - gallery_arrow_color
       - gallery_page_navigation

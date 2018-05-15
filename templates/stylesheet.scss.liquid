@@ -196,13 +196,13 @@ html.is-changing {
   }
   .asset-container {
     opacity: 1;
-    animation: fadeout 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: fadeout .6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     animation-delay: .5s;
   }
 }
 
 canvas.image-placeholder {
-  animation: fadein 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: fadein .6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 .fade-out {
@@ -729,6 +729,13 @@ body.gallery {
       }
     }
     &.text {
+      {% if theme.gallery_dominant_background %}
+        opacity: 0 !important;
+        transition: 0 !important;
+        &.swiper-slide-active, &.swiper-slide-prev {
+          opacity: 1 !important;
+        }
+      {% endif %}
       {% css_block theme.gallery_text_element %}
       background-color: {{ theme.background_color }};
       .swiper-slide-container {
@@ -790,15 +797,15 @@ body.gallery {
   .caption {
     pointer-events: none;
     display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-align-items: center;
-  -webkit-box-align: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     background: {{ theme.background_color }};
     position: absolute;
     z-index: 3;
@@ -944,7 +951,7 @@ body.gallery {
   right: 0;
   bottom: 0;
   background: darken({{ theme.background_color }}, 2%);
-  transition: $transition-4;
+  transition: $transition-1;
   transform: translateY(100%);
   &.active {
     transform: translateY(0);
@@ -1098,29 +1105,35 @@ body.gallery {
 }
 
 .dominant-background {
+  transition: $transition-2;
+  background: {{ theme.background_color }};
   pointer-events: none;
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
-  {% if theme.gallery_style == 'No Overlap with Dominant Color' %}
+  &:before {
+    content: "";
+    transition: $transition-2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    {% if theme.gallery_dominant_color == 'Dark' %}
+      background: #000;
+      opacity: .7;
+    {% else %}
+      background: #fff;
+      opacity: .8;
+    {% endif %}
+  }
+  &.active {
     &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      {% if theme.gallery_dominant_color == 'Dark' %}
-        background: #000;
-        opacity: .7;
-      {% else %}
-        background: #fff;
-        opacity: .8;
-      {% endif %}
+      opacity: 0;
     }
-  {% endif %}
+  }
 }
 
 .swiper-pagination {

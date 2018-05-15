@@ -16,7 +16,9 @@
         </div>
       {% endif %}
     {% endif %}
-
+    {% if theme.gallery_dominant_background %}
+      <div class="dominant-background global fade-out active"></div>
+    {% endif %}
     <button class="index-button fade-out">
       <span></span>
       <span></span>
@@ -35,7 +37,7 @@
     <div class="assets-grid swiper-container asset-container">
       <div class="swiper-wrapper">
         {% if page.title %}
-          <div class="title-wrapper swiper-slide">
+          <div class="title-wrapper swiper-slide" data-hash="0" data-color="">
             {% theme_include 'partials/title' %}
           </div>
         {% endif %}
@@ -61,8 +63,8 @@
         {% endif %}
       </div>
       <!-- Add Arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next fade-out"></div>
+      <div class="swiper-button-prev fade-out"></div>
     </div>
     <!-- Add Pagination -->
     {% if theme.gallery_page_navigation %}

@@ -2,11 +2,9 @@
   {% capture overlap %}{% if theme.gallery_style == 'Overlap' %}overlap {% endif %}{% endcapture %}
   {% case asset.type %}
       {% when 'image' %}
-          <div class="{{ overlap }}asset swiper-slide image" data-hash="{{ forloop.index }}">
-            {% if theme.gallery_style == 'No Overlap with Dominant Color' %}
+          <div class="{{ overlap }}asset swiper-slide image" data-hash="{{ forloop.index }}" data-color="{{ asset.dominant_color }}">
+            {% if theme.gallery_style == 'No Overlap' %}
               <div class="dominant-background fade-out" style="background: {{ asset.dominant_color }};"></div>
-            {% elsif theme.gallery_style == 'No Overlap with Background Color'  %}
-              <div class="dominant-background fade-out" style="background: {{ theme.background_color }};"></div>
             {% endif %}
             <div class="swiper-slide-container">
                 {% assign ratioWidth = asset.image_dimensions_1600x1200[0] %}
@@ -30,7 +28,7 @@
             {% endif %}
           </div>
       {% when 'video' %}
-          <div class="{{ overlap }}asset swiper-slide video fade-out" data-hash="{{ forloop.index }}">
+          <div class="{{ overlap }}asset swiper-slide video fade-out" data-hash="{{ forloop.index }}" data-color="">
             <div class="swiper-slide-container video-overlay">
               <a data-fancybox="" data-type="iframe" data-src="{{ asset.iframe_url }}">
                 <div class="video-overlay-darken"></div>
@@ -52,7 +50,7 @@
             {% endif %}
           </div>
       {% when 'text' %}
-          <div class="asset swiper-slide text" data-hash="{{ forloop.index }}">
+          <div class="asset swiper-slide text" data-hash="{{ forloop.index }}" data-color="">
             <div class="swiper-slide-container">
               <div class="text-container fade-out">
                 <div class="text-inner-container">
