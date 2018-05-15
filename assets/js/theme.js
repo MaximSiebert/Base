@@ -106,11 +106,11 @@ window.Theme.Caption = window.Theme.Caption || {
     $("html").on("click", ".details", function () {
       if ($(this).hasClass('active')) {
         $(this).removeClass("active");
-        $(this).children('span').text('+')
+        $(this).children('span').text('Read more')
         $(this).siblings('.caption').removeClass("active");
       } else {
         $(this).addClass("active");
-        $(this).children('span').text('−')
+        $(this).children('span').text('Close')
         $(this).siblings('.caption').addClass("active");
       }
     });
@@ -152,17 +152,17 @@ window.Theme.Gallery = window.Theme.Gallery || {
     var video = $(".video"),
         videoOverlay = $(".video-overlay");
 
-    videoOverlay.click(function(e) {
-      e.preventDefault();
-      $(this)
-        .parent(".video")
-        .addClass("playing");
-      $(this)
-        .parent(".video")
-        .find("iframe")[0].src +=
-        "&autoplay=1";
-      $('body').addClass('video-playing');
-    });
+    // videoOverlay.click(function(e) {
+    //   e.preventDefault();
+    //   $(this)
+    //     .parent(".video")
+    //     .addClass("playing");
+    //   $(this)
+    //     .parent(".video")
+    //     .find("iframe")[0].src +=
+    //     "&autoplay=1";
+    //   $('body').addClass('video-playing');
+    // });
   },
   respVideo: function() {
     reframe("iframe");
@@ -196,7 +196,7 @@ var swiper = new Swiper('.swiper-container', {
 
 swiper.on('slideChange', function () {
   $('.caption').removeClass('active');
-  $('.details').children('span').text('+');
+  $('.details').children('span').text('Read more');
   $('.details').removeClass('active');
 });
 

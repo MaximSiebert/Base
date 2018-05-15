@@ -26,14 +26,17 @@
                   </div>
                 </div>
               </div>
-              <button class="details fade-out"><span>+</span></button>
+              <button class="details fade-out"><span>Read more</span></button>
             {% endif %}
           </div>
       {% when 'video' %}
           <div class="{{ overlap }}asset swiper-slide video fade-out" data-hash="{{ forloop.index }}">
             <div class="swiper-slide-container video-overlay">
-              <img src="{{ asset.thumbnail_url_960x0 }}" alt="" />
-              {{ asset.embed_dimensions }}
+              <a data-fancybox="" data-type="iframe" data-src="{{ asset.iframe_url }}">
+                <div class="video-overlay-darken"></div>
+                <img src="{{ asset.thumbnail_url_960x0 }}" alt="" />
+              </a>
+              {% comment %} {{ asset.embed_dimensions }} {% endcomment %}
             </div>
             {% if asset.copy %}
               <div class="caption fade-out">
@@ -45,7 +48,7 @@
                   </div>
                 </div>
               </div>
-              <button class="details fade-out"><span>+</span></button>
+              <button class="details fade-out"><span>Read more</span></button>
             {% endif %}
           </div>
       {% when 'text' %}

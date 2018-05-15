@@ -251,6 +251,14 @@ variables:
       - Center
       - Right
 
+  - id: menu_text
+    label: Menu Button Label
+    kind: text
+    notes: The text displayed on the menu bar.
+    value: 
+      light: "Menu"
+      dark: "Menu"
+
   - id: menu_background_color
     label: Menu Background Color
     kind: color
@@ -294,6 +302,22 @@ variables:
       - Overlap
       - No Overlap with Dominant Color
       - No Overlap with Background Color
+
+  - id: gallery_arrow_color
+    kind: select
+    label: Gallery Previous and Next image arrow color
+    value:
+      light: Light
+      dark: Light
+    values:
+      - Light
+      - Dark
+
+  - id: gallery_page_navigation
+    label: "Show gallery prev and next page navigation"
+    kind: boolean
+    notes: Shows or hides the gallery prev and next page navigation.
+    value: true
 
 # ----------------- Collection -----------------
 

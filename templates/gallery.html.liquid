@@ -36,9 +36,7 @@
       <div class="swiper-wrapper">
         {% if page.title %}
           <div class="title-wrapper swiper-slide">
-            <div class="swiper-slide-container">
-              {% theme_include 'partials/title' %}
-            </div>
+            {% theme_include 'partials/title' %}
           </div>
         {% endif %}
         {% theme_include 'partials/assets' %}
@@ -67,23 +65,27 @@
       <div class="swiper-button-prev"></div>
     </div>
     <!-- Add Pagination -->
-    {% if page.parent %}
-      {% if page.prev_nested_page %}
-        <div class="prev-link-wrapper fade-out">
-          <a class="prev-link" href="{{ page.parent.url }}{{ page.prev_nested_page.url }}">
-            {{ page.prev_nested_page.name }} – Prev
-          </a>
-        </div>
+    {% if theme.gallery_page_navigation %}
+      {% if page.parent %}
+        {% if page.prev_nested_page %}
+          <div class="prev-link-wrapper fade-out">
+            <a class="prev-link" href="{{ page.parent.url }}{{ page.prev_nested_page.url }}">
+              {{ page.prev_nested_page.name }} – Prev
+            </a>
+          </div>
+        {% endif %}
       {% endif %}
     {% endif %}
     <div class="swiper-pagination fade-out"></div>
-    {% if page.parent %}
-      {% if page.next_nested_page %}
-          <div class="next-link-wrapper fade-out">
-            <a class="next-link" href="{{ page.parent.url }}{{ page.next_nested_page.url }}">
-              Next – {{ page.next_nested_page.name }}
-            </a>
-          </div>
+    {% if theme.gallery_page_navigation %}
+      {% if page.parent %}
+        {% if page.next_nested_page %}
+            <div class="next-link-wrapper fade-out">
+              <a class="next-link" href="{{ page.parent.url }}{{ page.next_nested_page.url }}">
+                Next – {{ page.next_nested_page.name }}
+              </a>
+            </div>
+        {% endif %}
       {% endif %}
     {% endif %}
   </main>
