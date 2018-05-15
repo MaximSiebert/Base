@@ -3,8 +3,8 @@ base_variables:
   - id: base_background_color
     kind: color
     value:
-      light: "#FAFAFA"
-      dark: "#111111"
+      light: "#EFEEE9"
+      dark: "#1b1b1b"
     affected_variables:
       - background_color
       - collection_title_overlay_color
@@ -12,8 +12,8 @@ base_variables:
   - id: base_accent_color
     kind: color
     value:
-      light: "#000"
-      dark: "#ffffff"
+      light: "#444444"
+      dark: "#FFFFFF"
     affected_variables:
       - link_typography
       - link_typography.hover.color
@@ -24,8 +24,8 @@ base_variables:
   - id: base_text_color
     kind: color
     value:
-      light: "#111111"
-      dark: "#ffffff"
+      light: "#444444"
+      dark: "#FFFFFF"
     affected_variables:
       - text_typography
       - menu_typography
@@ -41,7 +41,7 @@ base_variables:
   - id: base_heading_font
     kind: typography
     value:
-      font-family: Aften Screen Bold
+      font-family: Nobile
       font-weight: normal
     affected_variables:
       - headline_typography
@@ -52,7 +52,7 @@ base_variables:
   - id: base_body_font
     kind: typography
     value:
-      font-family: Aften Screen Regular
+      font-family: Times New Roman
     affected_variables:
       - text_typography
       - menu_typography
@@ -86,8 +86,8 @@ variables:
     kind: color
     notes: The background color of your site
     value:
-      light: "#111111"
-      dark: "#111111"
+      light: "#EFEEE9"
+      dark: "#1b1b1b"
 
   # --- Logo ---
 
@@ -128,8 +128,8 @@ variables:
     kind: typography
     value:
       color:
-        light: "#ffffff"
-        dark: "#ffffff"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-family: "Times New Roman"
       font-weight: normal
       font-size: 14
@@ -137,7 +137,9 @@ variables:
       text-decoration: none
       opacity: 1
       hover:
-        color: "#ffffff"
+        color: 
+          light: "#444444"
+          dark: "#FFFFFF"
         text-decoration: none
         opacity: .7
 
@@ -149,8 +151,8 @@ variables:
     label: Body Text
     value:
       color:
-        light: "#fff"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#ffffff"
       font-family: "Times New Roman"
       font-size: 14
       line-height: 1.5
@@ -160,8 +162,8 @@ variables:
     kind: typography
     value:
       color:
-        light: "#FFFFFF"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-family: "Nobile"
       font-size: 36
       font-weight: bold
@@ -173,14 +175,16 @@ variables:
     kind: typography
     value:
       color:
-        light: "#fff"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-style: normal
       font-weight: normal
       opacity: .5
       text-decoration: none
       hover:
-        color: "#fff"
+        color: 
+          light: "#444444"
+          dark: "#FFFFFF"
         text-decoration: none
         opacity: 1
 
@@ -197,8 +201,8 @@ variables:
     kind: typography
     value:
       color:
-        light: "#fff"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-family: "Times New Roman"
       font-size: 14
 
@@ -209,20 +213,28 @@ variables:
     kind: typography
     value:
       color:
-        light: "#fff"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-family: "Nobile"
       font-size: 36
       font-weight: normal
       line-height: 1.2
       opacity: "1"
       hover:
-        color: "#fff"
-        text-decoration: underline
+        color:
+          light: "#111111"
+          dark: "#FFFFFF"
+        text-decoration: 
+          light: none
+          dark: underline
         opacity: "1"
       selected:
-        color: "#fff"
-        text-decoration: none
+        color:
+          light: "#111111"
+          dark: "#FFFFFF"
+        text-decoration: 
+          light: none
+          dark: underline
 
   - id: menu_category_typography
     label: Submenu Link
@@ -233,19 +245,25 @@ variables:
       font-weight: normal
       opacity: ".6"
       color:
-        light: "#fff"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       hover:
-        color: "#fff"
+        color: 
+          light: "#444444"
+          dark: "#FFFFFF"
         text-decoration: underline
       selected:
-        color: "#fff"
+        color: 
+          light: "#444444"
+          dark: "#FFFFFF"
         text-decoration: underline
 
   - id: menu_position
     label: Site Menu Items Position
     kind: select
-    value: Right
+    value: 
+      light: Right
+      dark: Center
     values:
       - Left
       - Center
@@ -263,8 +281,8 @@ variables:
     label: Menu Background Color
     kind: color
     value:
-      light: "#000000"
-      dark: "#cccccc"
+      light: "#FFFFFF"
+      dark: "#5c5c5c"
 
 # ----------------- Gallery -----------------
 
@@ -273,7 +291,9 @@ variables:
     kind: typography
     value:
       font-family: "Times New Roman"
-      color: "#FFFFFF"
+      color: 
+        light: "#444444"
+        dark: "#FFFFFF"
       font-size: 18
       line-height: 1.5
 
@@ -282,7 +302,9 @@ variables:
     kind: typography
     value:
       font-family: "Times New Roman"
-      color: "#FFFFFF"
+      color:
+        light: "#444444"
+        dark: "#FFFFFF"
       font-size: 18
       line-height: 1.5
 
@@ -296,18 +318,28 @@ variables:
     kind: select
     label: Gallery Style
     value:
-      light: Overlap
-      dark: No Overlap with Dominant Color
+      light: No Overlap with Dominant Color
+      dark: Overlap
     values:
       - Overlap
       - No Overlap with Dominant Color
       - No Overlap with Background Color
 
+  - id: gallery_dominant_color
+    kind: select
+    label: Shade of dominant color
+    value:
+      light: Light
+      dark: Dark
+    values:
+      - Light
+      - Dark
+
   - id: gallery_arrow_color
     kind: select
     label: Gallery Previous and Next image arrow color
     value:
-      light: Light
+      light: Dark
       dark: Light
     values:
       - Light
@@ -326,7 +358,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#FFFFFF"
+        light: "#444444"
         dark: "#FFFFFF"
       font-family: "Times New Roman"
       font-style: normal
@@ -338,7 +370,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#FFFFFF"
+        light: "#444444"
         dark: "#FFFFFF"
       font-family: "Nobile"
       font-style: normal
@@ -351,8 +383,8 @@ variables:
     kind: typography
     value:
       color:
-        light: "#FFFFFF"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-family: "Nobile"
       font-style: normal
       font-weight: normal
@@ -375,12 +407,22 @@ variables:
     notes: Shows or hides the Dominant color background on hover.
     value: true
 
+  - id: collection_dominant_color
+    kind: select
+    label: Shade of dominant color
+    value:
+      light: Light
+      dark: Dark
+    values:
+      - Light
+      - Dark
+
   - id: collection_layout
     kind: select
     label: Collection Layout
     value:
-      light: Grid
-      dark: Text
+      light: Text
+      dark: Grid
     values:
       - Grid
       - Text
@@ -392,16 +434,16 @@ variables:
     kind: typography
     value:
       color:
-        light: "#fff"
-        dark: "#999999"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-size: 14
       font-weight: normal
       text-decoration: none
       opacity: 1
       hover:
         color:
-          light: "#fff"
-          dark: "#cccccc"
+          light: "#444444"
+          dark: "#FFFFFF"
         text-decoration: none
         opacity: .7
 
@@ -563,10 +605,10 @@ variables:
     label: Post Title
     kind: typography
     value:
-      font-family: Freight Text Pro Book
+      font-family: Times New Roman
       color:
-        light: "#FFFFFF"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       font-size: 36
       font-style: normal
       font-weight: bold
@@ -575,17 +617,17 @@ variables:
         text-decoration: none
         opacity: 1
         color:
-          light: "#FFFFFF"
-          dark: "#eeeeee"
+          light: "#444444"
+          dark: "#FFFFFF"
 
   - id: blog_body_typography
     label: Post Body Text
     kind: typography
     value:
-      font-family: Freight Text Pro Book
+      font-family: Times New Roman
       color:
-        light: "#FFFFFF"
-        dark: "#cccccc"
+        light: "#444444"
+        dark: "#FFFFFF"
       line-height: 1.7
       font-size: 18
 
@@ -593,7 +635,7 @@ variables:
     label: Image Caption
     kind: typography
     value:
-      font-family: Freight Text Pro Book
+      font-family: Times New Roman
       font-size: 14
 
   - id: blog_images_slideshow_color
