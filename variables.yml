@@ -143,13 +143,11 @@ variables:
       font-size: 14
       font-style: normal
       text-decoration: none
-      opacity: 1
       hover:
         color: 
-          light: "#444444"
+          light: "#888888"
           dark: "#FFFFFF"
         text-decoration: none
-        opacity: .7
 
 
   # --- Typography ---
@@ -187,18 +185,16 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
-        dark: "#FFFFFF"
+        light: "#888888"
+        dark: "#AAAAAA"
       font-style: normal
       font-weight: normal
-      opacity: .5
       text-decoration: none
       hover:
         color: 
           light: "#444444"
           dark: "#FFFFFF"
         text-decoration: none
-        opacity: 1
 
 # --- Footer ---
 
@@ -213,7 +209,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
+        light: "#888888"
         dark: "#FFFFFF"
       font-family:
         light: Helvetica Neue
@@ -261,20 +257,9 @@ variables:
         dark: Times New Roman
       font-size: 18
       font-weight: normal
-      opacity: ".6"
       color:
-        light: "#444444"
-        dark: "#FFFFFF"
-      hover:
-        color: 
-          light: "#444444"
-          dark: "#FFFFFF"
-        text-decoration: underline
-      selected:
-        color: 
-          light: "#444444"
-          dark: "#FFFFFF"
-        text-decoration: underline
+        light: "#888888"
+        dark: "#AAAAAA"
 
   - id: menu_position
     label: Site Menu Items Position

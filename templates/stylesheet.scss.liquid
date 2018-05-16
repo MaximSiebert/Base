@@ -437,12 +437,10 @@ body.active {
   margin-right: 10px;
   &:before, &:after {
     color: {{ theme.link_typography.color }};
-    opacity: {{ theme.link_typography.opacity }};
   }
   &:hover {
     &:before, &:after {
       color: {{ theme.link_typography.hover.color }};
-      opacity: {{ theme.link_typography.hover.opacity }};
     }
   }
   @media #{$breakpoint-not-small} {
@@ -507,24 +505,20 @@ body.active {
   z-index: 2;
   border: none;
   background-color: {{ theme.menu_background_color }};
-  color: {{ theme.menu_typography.color }};
+  color: {{ theme.link_typography.color }};
   transition: $transition-2;
   display: none;
   cursor: pointer;
   span {
-    opacity: {{ theme.link_typography.opacity }};
     transform: matrix(0, -1, 1, 0, 0, 0);
     display: block;
-    transition: $transition-1;
   }
   &:focus {
     outline: none;
     cursor: pointer;
   }
   &:hover {
-    span {
-      opacity: {{ theme.link_typography.hover.opacity }};
-    }
+    color: {{ theme.link_typography.hover.color }};
   }
   @media #{$breakpoint-not-small} {
     display: block;
@@ -551,13 +545,11 @@ body.active {
     cursor: pointer;
   }
   &:before, &:after {
-    background-color: {{ theme.menu_typography.color }};
-    opacity: {{ theme.menu_typography.opacity }};
+    background-color: {{ theme.link_typography.color }};
   }
   &:hover {
     &:before, &:after {
-      background-color: {{ theme.menu_typography.hover.color }};
-      opacity: {{ theme.menu_typography.hover.opacity }};
+      background-color: {{ theme.link_typography.hover.color }};
     }
   }
   @media #{$breakpoint-not-small} {
@@ -923,13 +915,11 @@ body.gallery {
     margin: 1px;
     height: 5px;
     background: {{ theme.link_typography.color }};
-    opacity: {{ theme.link_typography.opacity }};
     transition: $transition-2;
   }
   &:hover {
     span {
       background: {{ theme.link_typography.hover.color }};
-      opacity: {{ theme.link_typography.hover.opacity }};
     }
   }
   &.active {
@@ -1108,7 +1098,7 @@ body.gallery {
 }
 
 .dominant-background {
-  transition: $transition-2;
+  transition: all 0s ease;
   background: {{ theme.background_color }};
   pointer-events: none;
   position: fixed;
@@ -1118,7 +1108,7 @@ body.gallery {
   top: 0;
   &:before {
     content: "";
-    transition: $transition-2;
+    transition: all 0s ease;
     position: absolute;
     left: 0;
     right: 0;
