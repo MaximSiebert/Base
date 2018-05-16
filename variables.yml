@@ -12,7 +12,7 @@ base_variables:
   - id: base_accent_color
     kind: color
     value:
-      light: "#444444"
+      light: "#555555"
       dark: "#FFFFFF"
     affected_variables:
       - link_typography
@@ -24,7 +24,7 @@ base_variables:
   - id: base_text_color
     kind: color
     value:
-      light: "#444444"
+      light: "#555555"
       dark: "#FFFFFF"
     affected_variables:
       - text_typography
@@ -132,7 +132,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-family:
         light: Big Caslon FB Roman
@@ -157,7 +157,7 @@ variables:
     label: Body Text
     value:
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#ffffff"
       font-family:
         light: Helvetica Neue
@@ -170,7 +170,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-family:
         light: Big Caslon FB Roman
@@ -192,7 +192,7 @@ variables:
       text-decoration: none
       hover:
         color: 
-          light: "#444444"
+          light: "#555555"
           dark: "#FFFFFF"
         text-decoration: none
 
@@ -223,30 +223,28 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
-        dark: "#FFFFFF"
+        light: "#555555"
+        dark: "#AE9D88"
       font-family:
         light: Big Caslon FB Roman
         dark: Nobile
       font-size: 36
       font-weight: normal
       line-height: 1.2
-      opacity: "1"
       hover:
         color:
           light: "#111111"
           dark: "#FFFFFF"
         text-decoration: 
           light: none
-          dark: underline
-        opacity: "1"
+          dark: none
       selected:
         color:
           light: "#111111"
           dark: "#FFFFFF"
         text-decoration: 
           light: none
-          dark: underline
+          dark: none
 
   - id: menu_category_typography
     label: Submenu Link
@@ -259,7 +257,7 @@ variables:
       font-weight: normal
       color:
         light: "#888888"
-        dark: "#AAAAAA"
+        dark: "#FFFFFF"
 
   - id: menu_position
     label: Site Menu Items Position
@@ -297,7 +295,7 @@ variables:
         light: Helvetica Neue
         dark: Times New Roman
       color: 
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-size: 18
       line-height: 1.5
@@ -310,7 +308,7 @@ variables:
         light: Helvetica Neue
         dark: Times New Roman
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-size: 18
       line-height: 1.5
@@ -370,7 +368,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-family:
         light: Helvetica Neue
@@ -384,7 +382,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-family:
         light: Big Caslon FB Roman
@@ -399,7 +397,7 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-family:
         light: Big Caslon FB Roman
@@ -459,7 +457,7 @@ variables:
       text-decoration: none
       hover:
         color:
-          light: "#444444"
+          light: "#555555"
           dark: "#FFFFFF"
         text-decoration: none
 
@@ -625,7 +623,7 @@ variables:
         light: Big Caslon FB Roman
         dark: Times New Roman
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       font-size: 36
       font-style: normal
@@ -635,7 +633,7 @@ variables:
         text-decoration: none
         opacity: 1
         color:
-          light: "#444444"
+          light: "#555555"
           dark: "#FFFFFF"
 
   - id: blog_body_typography
@@ -646,7 +644,7 @@ variables:
         light: Helvetica Neue
         dark: Times New Roman
       color:
-        light: "#444444"
+        light: "#555555"
         dark: "#FFFFFF"
       line-height: 1.7
       font-size: 18
