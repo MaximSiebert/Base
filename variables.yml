@@ -454,7 +454,7 @@ variables:
     kind: select
     label: Collection Layout
     value:
-      light: Text
+      light: Grid
       dark: Grid
     values:
       - Grid

@@ -50,10 +50,11 @@ body {
   {% css_block theme.text_typography %}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 120px;
   @media #{$breakpoint-not-small} {
     padding-left: 30px;
+    padding-top: 120px;
   }
 }
 
@@ -893,7 +894,7 @@ body.gallery {
 }
 
 .index-button {
-  position: absolute;
+  position: fixed;
   left: 50%;
   bottom: 34px;
   transform: translateX(30px);
@@ -902,15 +903,6 @@ body.gallery {
   border: none;
   font-family: inherit;
   z-index: 2;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   width: 14px;
   transition: $transition-2;
   &:focus {
@@ -918,6 +910,7 @@ body.gallery {
   }
   span {
     display: block;
+    float: left;
     width: 5px;
     margin: 1px;
     height: 5px;
@@ -959,20 +952,22 @@ body.gallery {
 }
 
 .index-scroller {
-  padding: 120px 0;
+  padding: 80px 0 140px;
   width: calc(100% + 30px);
   padding-left: 0;
   height: 100vh;
   overflow-y: scroll;
   @media #{$breakpoint-not-small} {
-    padding-left: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 120px;
   }
 }
 
 .index-container {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 0 70px 0 60px;
+  padding: 0 60px 0 30px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -1280,8 +1275,10 @@ body.listing {
 
   .title-element {
     margin-bottom: 60px;
+    margin-top: 20px;
     @media #{$breakpoint-not-small} {
       margin-bottom: 100px;
+      margin-top: 0;
     }
   }
 
