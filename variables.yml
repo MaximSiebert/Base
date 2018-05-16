@@ -258,6 +258,20 @@ variables:
       color:
         light: "#888888"
         dark: "#FFFFFF"
+      hover:
+        color:
+          light: "#888888"
+          dark: "#FFFFFF"
+        text-decoration: 
+          light: none
+          dark: none
+      selected:
+        color:
+          light: "#888888"
+          dark: "#FFFFFF"
+        text-decoration: 
+          light: none
+          dark: none
 
   - id: menu_position
     label: Site Menu Items Position

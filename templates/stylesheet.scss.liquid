@@ -1226,17 +1226,17 @@ body.gallery {
 
 .swiper-button-next {
   {% if theme.gallery_arrow_color == 'Light' %}
-    cursor: url('img/arrow-right.svg'), default;
+    cursor: url({% asset img/arrow-right.svg %}), default;
   {% else %}
-    cursor: url('img/arrow-right-dark.svg'), default;
+    cursor: url({% asset img/arrow-right-dark.svg %}), default;
   {% endif %}
 }
 
 .swiper-button-prev {
   {% if theme.gallery_arrow_color == 'Light' %}
-    cursor: url('img/arrow-left.svg'), default;
+    cursor: url({% asset img/arrow-left.svg %}), default;
   {% else %}
-    cursor: url('img/arrow-left-dark.svg'), default;
+    cursor: url({% asset img/arrow-left-dark.svg %}), default;
   {% endif %}
 }
 
