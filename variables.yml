@@ -452,18 +452,16 @@ variables:
     kind: typography
     value:
       color:
-        light: "#444444"
-        dark: "#FFFFFF"
+        light: "#888888"
+        dark: "#AAAAAA"
       font-size: 14
       font-weight: normal
       text-decoration: none
-      opacity: 1
       hover:
         color:
           light: "#444444"
           dark: "#FFFFFF"
         text-decoration: none
-        opacity: .7
 
   - id: social_links_style
     label: Link Style
