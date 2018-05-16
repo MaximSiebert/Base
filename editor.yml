@@ -5,6 +5,7 @@ drawers:
       - id: advanced
         variables:
           - menu_position
+          - menu_text
           - gallery_index
           - gallery_style
           - gallery_dominant_background
@@ -12,6 +13,7 @@ drawers:
           - gallery_arrow_color
           - gallery_page_navigation
           - collection_caption_typography_alignment
+          - collection_dominant_color
           - collection_dominant_color_hover
           - collection_layout
           - post_text
@@ -139,6 +141,7 @@ groups:
       - collection_header_typography
       - collection_caption_typography
       - collection_caption_typography_alignment
+      - collection_dominant_color
       - collection_dominant_color_hover
       - collection_layout
 
