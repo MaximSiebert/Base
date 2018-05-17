@@ -13,8 +13,8 @@ skins:
 default_skin: light
 
 using_position:
-  right: 20
-  bottom: 20
+  right: 30
+  bottom: 37
 
 preview_images:
   - path: preview_images/1.jpg
