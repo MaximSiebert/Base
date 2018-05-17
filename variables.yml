@@ -642,10 +642,8 @@ variables:
       font-size: 36
       font-style: normal
       font-weight: bold
-      opacity: .5
       hover:
         text-decoration: none
-        opacity: 1
         color:
           light: "#555555"
           dark: "#FFFFFF"
