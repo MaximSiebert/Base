@@ -6,11 +6,13 @@
   {% else if page.title.copy and page.title.copy_alignment != "none" %}
     {% if page.type == "gallery" %}
       <div class="swiper-slide-container">
+    {% elsif page.type == "listing" %}
+      <div class="container">
     {% endif %}
       <div class="title-element title-text fade-out">
         <div class="text">{{ page.title.copy }}</div>
       </div>
-    {%if page.type == "gallery" %}
+    {%if page.type == "gallery" or page.type == "listing" %}
       </div>
     {% endif %}
   {% endif %}

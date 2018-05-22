@@ -184,6 +184,8 @@ window.Theme.Gallery = window.Theme.Gallery || {
 
 // Gallery Swiper
 
+var hideSib = "hide-siblings";
+
 var swiper = new Swiper('.swiper-container', {
   keyboard: true,
   hashNavigation: true,
@@ -209,8 +211,18 @@ var swiper = new Swiper('.swiper-container', {
         }
       }
     },
+    slideChangeTransitionStart: function () {
+      $('.swiper-slide-active').siblings().addClass(hideSib); 
+      $('.swiper-slide-active').next().removeClass(hideSib); 
+      $('.swiper-slide-active').prev().removeClass(hideSib);
+    },
+    
   }
 });
+
+$('.swiper-slide-active').siblings().addClass(hideSib);
+$('.swiper-slide-active').next().removeClass(hideSib);
+$('.swiper-slide-active').prev().removeClass(hideSib);
 
 swiper.on('slideChangeTransitionStart', function () {
   var backgroundColor = $('.swiper-slide-active').data('color');

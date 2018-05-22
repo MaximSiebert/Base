@@ -624,6 +624,14 @@ Gallery Styles
 ------------------------------------------------------------------
 */
 
+.swiper-slide-container {
+  transition: all 0s ease-in;
+}
+
+.hide-siblings .swiper-slide-container {
+  opacity: 0;
+}
+
 .asset:not(.video) {
   img {
     z-index: 1;
@@ -1309,7 +1317,7 @@ body.listing {
 
   .title-element:not(.image) {
     margin-bottom: 60px;
-    margin-top: 20px;
+    padding-top: 100px;
     @media #{$breakpoint-not-small} {
       margin-bottom: 100px;
       margin-top: 0;
