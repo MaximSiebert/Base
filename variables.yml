@@ -31,7 +31,6 @@ base_variables:
       - menu_typography
       - headline_typography
       - footer_typography
-      - collection_header_headings_typography
       - collection_header_typography
       - collection_caption_typography
       - gallery_caption_typography
@@ -48,7 +47,6 @@ base_variables:
     affected_variables:
       - headline_typography
       - blog_title_typography
-      - collection_header_headings_typography
       - collection_caption_typography
 
   - id: base_body_font
@@ -73,7 +71,6 @@ base_variables:
       - text_typography
       - headline_typography
       - menu_typography
-      - collection_header_headings_typography
       - collection_header_typography
       - collection_caption_typography
       - gallery_caption_typography
@@ -258,20 +255,6 @@ variables:
       color:
         light: "#888888"
         dark: "#FFFFFF"
-      hover:
-        color:
-          light: "#888888"
-          dark: "#FFFFFF"
-        text-decoration: 
-          light: none
-          dark: none
-      selected:
-        color:
-          light: "#888888"
-          dark: "#FFFFFF"
-        text-decoration: 
-          light: none
-          dark: none
 
   - id: menu_position
     label: Site Menu Items Position
@@ -369,12 +352,6 @@ variables:
       - Light
       - Dark
 
-  - id: gallery_page_navigation
-    label: "Show gallery prev and next page navigation"
-    kind: boolean
-    notes: Shows or hides the gallery prev and next page navigation.
-    value: true
-
 # ----------------- Collection -----------------
 
   - id: collection_header_typography
@@ -390,21 +367,6 @@ variables:
       font-style: normal
       font-size: 18
       line-height: 1.6
-
-  - id: collection_header_headings_typography
-    label: Header Text Headings
-    kind: typography
-    value:
-      color:
-        light: "#555555"
-        dark: "#FFFFFF"
-      font-family:
-        light: Big Caslon FB Roman
-        dark: Nobile
-      font-style: normal
-      font-weight: normal
-      font-size: 42
-      line-height: 1.4
 
   - id: collection_caption_typography
     label: Page Link
@@ -456,6 +418,12 @@ variables:
     values:
       - Grid
       - Text
+
+  - id: gallery_page_navigation
+    label: "Show gallery prev and next page navigation"
+    kind: boolean
+    notes: Shows or hides the gallery prev and next page navigation.
+    value: true
 
 # ----------------- Social -----------------
 

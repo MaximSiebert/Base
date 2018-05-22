@@ -47,7 +47,6 @@ drawers:
           - background_color
           - menu_background_color
           - gallery_caption_typography
-          - collection_header_headings_typography
           - collection_header_typography
           - collection_caption_typography
           - blog_title_typography
@@ -71,7 +70,6 @@ drawers:
           - link_typography
           - gallery_caption_typography
           - gallery_text_element
-          - collection_header_headings_typography
           - collection_header_typography
           - collection_caption_typography
           - blog_title_typography
@@ -133,17 +131,16 @@ groups:
       - gallery_dominant_background
       - gallery_dominant_color
       - gallery_arrow_color
-      - gallery_page_navigation
 
   - id: collection
     variables:
-      - collection_header_headings_typography
       - collection_header_typography
       - collection_caption_typography
       - collection_caption_typography_alignment
       - collection_dominant_color
       - collection_dominant_color_hover
       - collection_layout
+      - gallery_page_navigation
 
   - id: blog
     variables:
