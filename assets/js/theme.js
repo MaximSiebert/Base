@@ -90,7 +90,7 @@ window.Theme.Menu = window.Theme.Menu || {
 
 window.Theme.CollectionTitle = window.Theme.CollectionTitle || {
   hover: function () {
-    $(".asset").hover(
+    $(".listing .asset").hover(
       function () {
         $(this).siblings().children('.asset-inner').css('opacity', '.3');
         $('.title-element').css('opacity', '.3');
