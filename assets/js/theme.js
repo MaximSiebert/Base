@@ -174,7 +174,10 @@ window.Theme.Gallery = window.Theme.Gallery || {
       baseClass: "boilerplate-slideshow",
       animationDuration: 180,
       transitionDuration: 180,
-      toolbar: false
+      toolbar: false,
+      afterShow: function() {
+        $('.fancybox-slide--current iframe')[0].src += "&autoplay=1";
+      }
     });
   }
 };
@@ -186,6 +189,7 @@ var swiper = new Swiper('.swiper-container', {
   hashNavigation: true,
   effect: 'fade',
   speed: 100,
+  simulateTouch: false,
   pagination: {
     el: '.swiper-pagination',
     type: 'fraction',

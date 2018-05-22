@@ -1,11 +1,13 @@
 {% if page.title %}
   {% if page.title.image_url and page.title.copy_alignment != "only" %}
-    <img class="fade-out" src='{{ page.title.image_url_900x0 }}'>
+    <div class="title-element image fade-out">
+      <img src='{{ page.title.image_url_900x0 }}'>
+    </div>
   {% else if page.title.copy and page.title.copy_alignment != "none" %}
     {% if page.type == "gallery" %}
       <div class="swiper-slide-container">
     {% endif %}
-      <div class="title-element fade-out">
+      <div class="title-element title-text fade-out">
         <div class="text">{{ page.title.copy }}</div>
       </div>
     {%if page.type == "gallery" %}

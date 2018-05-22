@@ -1050,7 +1050,6 @@ body.gallery {
   position: absolute;
   bottom: 60px;
   left: 50%;
-  margin-left: 15px;
   opacity: 0;
   background: none;
   font-family: inherit;
@@ -1071,6 +1070,9 @@ body.gallery {
   &:focus {
     outline: none;
   }
+  @media #{$breakpoint-not-small} {
+    margin-left: 15px;
+  }
 }
 
 .swiper-slide-active .details {
@@ -1084,6 +1086,10 @@ body.gallery {
 }
 
 .title-wrapper {
+  .title-element {
+    height: 100%;
+    width: 100%;
+  }
   img {
     height: 100%;
     max-width: inherit;
@@ -1095,7 +1101,7 @@ body.gallery {
   }
 }
 
-.title-element {
+.title-element:not(.image) {
   position: relative;
   z-index: 1;
   max-width: $text-width;
@@ -1268,6 +1274,18 @@ Collection Styles
 */
 
 body.listing {
+  padding-top: 0;
+  .title-element {
+    img {
+      width: 100%;
+    }
+    &.title-text {
+      padding-top: 80px;
+      @media #{$breakpoint-not-small} {
+        padding-top: 120px;
+      }
+    }
+  }
   .asset-container.grid {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1289,12 +1307,19 @@ body.listing {
     margin: 0 auto;
   }
 
-  .title-element {
+  .title-element:not(.image) {
     margin-bottom: 60px;
     margin-top: 20px;
     @media #{$breakpoint-not-small} {
       margin-bottom: 100px;
       margin-top: 0;
+    }
+  }
+
+  .title-element.image {
+    margin-bottom: 60px;
+    @media #{$breakpoint-not-small} {
+      margin-bottom: 100px;
     }
   }
 
@@ -1736,4 +1761,16 @@ body.product main .f-back-to-store-link {
 
 .order-download ul {
   padding: 0px;
+}
+
+._4ORMAT_content_wrapper {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  ._4ORMAT_content_wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

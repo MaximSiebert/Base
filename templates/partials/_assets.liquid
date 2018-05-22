@@ -30,7 +30,7 @@
       {% when 'video' %}
           <div class="{{ overlap }}asset swiper-slide video fade-out" data-hash="{{ forloop.index }}" data-color="">
             <div class="swiper-slide-container video-overlay">
-              <a data-fancybox="" data-type="iframe" data-src="{{ asset.iframe_url }}">
+              <a class="fancybox.iframe" data-fancybox="" data-type="iframe" data-src="{{ asset.iframe_url }}">
                 <div class="video-overlay-darken"></div>
                 <img src="{{ asset.thumbnail_url_960x0 }}" alt="" />
               </a>

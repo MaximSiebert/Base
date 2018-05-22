@@ -1,7 +1,7 @@
 {% layout %}
 
   {% theme_include 'partials/header' %}
-
+  {% theme_include 'partials/title' %}
   <main class="container">
     {% if page.is_homepage != true %}
       <div class="page-title fade-out">
@@ -17,7 +17,6 @@
         </div>
       {% endif %}
     {% endif %}
-    {% theme_include 'partials/title' %}
     {% capture layout %}{% if theme.collection_layout == 'Grid' %}grid {% else %}text {% endif %}{% endcapture %}
     <div class="{{ layout }}asset-container">
     {% for asset in page.assets %}
