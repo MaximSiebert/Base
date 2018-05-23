@@ -8,7 +8,7 @@ describe 'Example theme frontend', theme: 'example', type: :feature, shared_sess
                   wait_callback: proc {
                     find('.mobile-menu-toggle').click
                   }
-  it_behaves_like 'page with social links', selector: '.social-link'
+  it_behaves_like 'page with social links', selector: '.social-desktop .social-link'
   it_behaves_like 'has gallery support', lazy_load: true
   it_behaves_like 'has listing support', lazy_load: true,
                   title_selector: '.title-element',
