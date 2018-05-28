@@ -449,7 +449,7 @@ variables:
     values:
       - Icon
       - Text
-    value: Text
+    value: Icon
 
   - id: icon1
     kind: select

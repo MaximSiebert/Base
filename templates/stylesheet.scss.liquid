@@ -294,10 +294,13 @@ body.active {
   z-index: 5;
   {% if theme.social_links_style == "Icon" %}
     display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    .social-link {
+      margin-right: 8px;
+    }
   {% endif %}
   .social-link,
   .social-share {
