@@ -83,6 +83,13 @@ window.Theme.Menu = window.Theme.Menu || {
     $("html").on("click", ".menu-close", function () {
       $("body").removeClass("active");
     });
+    $(document).keyup(function(e) {
+         if (e.keyCode == 27) {
+          if ($("body").hasClass("active")) {
+            $("body").removeClass("active");
+          }
+        }
+    });
   }
 };
 
@@ -144,6 +151,10 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
       } else {
         swiper.slideTo(hash - 1)
       }
+      $('.swiper-slide-active').siblings().addClass(hideSib);
+      $('.swiper-slide-active').removeClass(hideSib);
+      $('.swiper-slide-active').next().removeClass(hideSib);
+      $('.swiper-slide-active').prev().removeClass(hideSib);
       $('.gallery-index').removeClass('active');
       $(".index-button").removeClass('active');
     });
@@ -155,6 +166,20 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
         $('.gallery-index').addClass("active");
         $(this).addClass('active');
       }
+    });
+    $("html").on("click", ".gallery-overlay", function () {
+      if ($('.gallery-index').hasClass('active')) {
+        $('.gallery-index').removeClass("active");
+        $(".index-button").removeClass('active');
+      }
+    });
+    $(document).keyup(function(e) {
+         if (e.keyCode == 27) {
+          if ($(".gallery-index").hasClass("active")) {
+            $(".gallery-index").removeClass("active");
+            $(".index-button").removeClass('active');
+          }
+        }
     });
   }
 };

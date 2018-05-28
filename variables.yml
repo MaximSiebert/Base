@@ -173,7 +173,7 @@ variables:
         light: Big Caslon FB Roman
         dark: Nobile
       font-size: 36
-      font-weight: bold
+      font-weight: normal
 
 # ----------------- Links -----------------
       
