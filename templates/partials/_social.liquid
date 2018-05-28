@@ -1,20 +1,26 @@
 <nav class="social">
-    {% for i in (1..5) %}
-        {% capture icon_name %}icon{{i}}{% endcapture %}
-        {% capture icon_text %}icon{{i}}text{% endcapture %}
-        {% unless theme[icon_name] == 'None' or theme[icon_text] == blank %}
-            <div class="social-link">
-                <a href="{{ theme[icon_text] | strip_brs }}" class="{% if theme.social_links_style == 'Icon' %}f-icon-{{ theme[icon_name] | downcase | replace:'+','plus' }} {% endif %}" target="_blank" title="{{ theme[icon_name] }}">
-                    {% if theme.social_links_style == 'Text' %}{{ theme[icon_name] }}{% endif %}
-                </a>
-            </div>
-        {% endunless %}
-    {% endfor %}
-    {% unless theme.show_social_sharing == false %}
-        <div class="social-link social-share">
-            <a href="#" id="share_4ormat_link" class="{% if theme.social_links_style == 'Icon' %}f-icon-share {% endif %}social-share" title="Share">
-                {% if theme.social_links_style == 'Text' %}Share{% endif %}
-            </a>
-        </div>
+  {% for i in (1..5) %}
+    {% capture icon_name %}icon{{i}}{% endcapture %}
+    {% capture icon_text %}icon{{i}}text{% endcapture %}
+    {% capture theme_icon_name %}{% unless theme[icon_name] == 'Google+'%}{{theme[icon_name] | downcase }}{% else %}gplus{% endunless %}{% endcapture %}
+    {% capture icon_path %}theme_api/v2/social/{{ theme_icon_name }}.svg{% endcapture %}
+    {% unless theme[icon_name] == 'None' or theme[icon_text] == blank %}
+      <div class="social-link">
+        <a href="{{ theme[icon_text] | strip_brs }}" target="_blank" title="{{ theme[icon_name] }}">
+          {% if theme.social_links_style == 'Text' %}
+            {{ theme[icon_name] }}
+          {% else %}
+            {{ icon_path | inline_svg_with_class: 'social-icon' }}
+          {% endif %}
+        </a>
+      </div>
     {% endunless %}
+  {% endfor %}
+  {% unless theme.show_social_sharing == false %}
+    <div class="social-link">
+      <a href="#" id="share_4ormat_link" class="social-share" title="Share">
+        {% if theme.social_links_style == 'Text' %}Share{% else %}{{ 'theme_api/v2/social/share.svg' | inline_svg_with_class: 'social-icon social-icon-share' }}{% endif %}
+      </a>
+    </div>
+  {% endunless %}
 </nav>

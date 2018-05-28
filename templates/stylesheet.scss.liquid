@@ -309,6 +309,11 @@ body.active {
       }
     }
   }
+  .social-icon {
+    fill: {{ theme.social_links_typography.color }};
+    height: {{ theme.social_links_typography.font-size }}px;
+    overflow: visible!important;
+  }
 }
 
 .social-desktop {
@@ -421,9 +426,6 @@ body.active {
       {% css_block theme.menu_category_typography %}
       margin-bottom: 1.25rem;
       display: block;
-      &.selected > a {
-        {% css_block theme.menu_category_typography.selected %}
-      }
     }
   }
   .category {
@@ -819,7 +821,6 @@ body.gallery {
         }
       }
       h2 {
-        {% css_block theme.collection_header_headings_typography %}
         text-align: center;
         margin-top: 0;
       }
@@ -1693,20 +1694,12 @@ Store Styles
   display: none;
 }
 
-html.cart-enabled {
-  .header.align-right .menu {
-    padding-right: 25px;
-  }
-  .header.align-left .logo {
-    padding-right: 25px;
-  }
-}
-
 .product-list {
   .product-name {
     {% css_block theme.headline_typography %};
   }
   .product-price {
+    font-family: {{ theme.text_typography.font-family }} !important;
     color: {{ theme.text_typography.color }} !important;
   }
 }
@@ -1715,8 +1708,12 @@ body.order_confirmation .btn-cancel,
 .product-order-form .f-add-to-cart-button,
 .product-order-form .select2-choice {
   background: transparent !important;
-  border: 1px solid {{ theme.text_typography.color }} !important;
+  border: 1px solid rgba({{ theme.text_typography.color | hex_to_rgb }}, 0.2) !important;
   color: {{ theme.text_typography.color }} !important;
+}
+
+.product-order-form .f-add-to-cart-button {
+  border: 1px solid rgba({{ theme.text_typography.color | hex_to_rgb }}, 0.3) !important;
 }
 
 body.product .product-info {
@@ -1733,31 +1730,30 @@ body.product .product-info {
 
 body.product .select2-drop {
   background: {{ theme.background_color }} !important;
-  border-color: {{ theme.text_typography.color }} {{ theme.text_typography.color }} {{ theme.text_typography.color }} {{ theme.text_typography.color }} !important;
+  border: 1px solid rgba({{ theme.text_typography.color | hex_to_rgb }}, 0.2) !important;
   color: {{ theme.text_typography.color }} !important;
 }
 
 body.product .select2-drop ul,
 body.product .select2-drop ul .select2-result-label {
-  border-color: {{ theme.text_typography.color }} {{ theme.text_typography.color }} {{ theme.text_typography.color }} {{ theme.text_typography.color }} !important;
+  border-color: rgba({{ theme.text_typography.color | hex_to_rgb }}, 0.2) !important;
 }
 
 body.product .select2-results .select2-highlighted,
 .product-order-form .f-add-to-cart-button:hover {
-  background: rgba({{ theme.text_typography.color | hex_to_rgb }}, 0.2) !important;
+  background: rgba({{ theme.text_typography.color }}, 0.1) !important;
 }
 
 body.product .select2-results .select2-highlighted {
   color: {{ theme.text_typography.color }} !important;
 }
 
-body.product .product-order-form .select2-container .select2-choice div b {
-  border-top: 6px solid {{ theme.text_typography.color }} !important;
+body.product .product-order-form .select2-container .select2-choice div b:before {
+  border-top-color: rgba({{ theme.text_typography.color | hex_to_rgb }}, 0.6) !important;
 }
 
-body.product .product-order-form .select2-container.select2-dropdown-open .select2-choice div b {
-  border-bottom: 6px solid {{ theme.text_typography.color }} !important;
-  border-top: 0 !important;
+body.product .product-order-form .select2-container .select2-choice div b:after {
+  border-top-color: {{ theme.background_color }};
 }
 
 body.order_confirmation .order-confirmation {
@@ -1803,17 +1799,23 @@ body.order_download svg {
   fill: {{ theme.link_typography.color }};
 }
 
-.f-back-to-store-link svg {
-  fill: {{ theme.link_typography.color }};
-}
-
-body.product main .f-back-to-store-link {
-  text-decoration: none;
+.f-back-to-store-link {
+  {% css_block theme.link_typography %}
+  svg {
+    fill: {{ theme.link_typography.color }};
+  }
+  &:hover {
+    {% css_block theme.link_typography.hover %}
+    svg {
+      fill: {{ theme.link_typography.hover.color }};
+    }
+  }
 }
 
 .order-download ul {
   padding: 0px;
 }
+
 
 ._4ORMAT_content_wrapper {
   padding-left: 30px;
