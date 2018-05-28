@@ -173,6 +173,13 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
         $(".index-button").removeClass('active');
       }
     });
+    $("html").on("click", ".go-back", function () {
+      swiper.slideTo(0);
+      $('.swiper-slide-active').siblings().addClass(hideSib);
+      $('.swiper-slide-active').removeClass(hideSib);
+      $('.swiper-slide-active').next().removeClass(hideSib);
+      $('.swiper-slide-active').prev().removeClass(hideSib);
+    });
     $(document).keyup(function(e) {
          if (e.keyCode == 27) {
           if ($(".gallery-index").hasClass("active")) {
