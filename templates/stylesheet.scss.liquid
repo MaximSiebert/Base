@@ -1359,11 +1359,16 @@ body.listing {
     margin: 0 auto;
   }
 
+  main.container {
+    padding-top: 60px;
+    @media #{$breakpoint-not-small} {
+      padding-top: 100px;
+    }
+  }
+
   .title-element:not(.image) {
-    margin-bottom: 60px;
     padding-top: 100px;
     @media #{$breakpoint-not-small} {
-      margin-bottom: 100px;
       margin-top: 0;
     }
   }
