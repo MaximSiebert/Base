@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Example theme frontend', theme: 'example', type: :feature, shared_session: true do
+describe 'Fabric theme frontend', theme: 'fabric', type: :feature, shared_session: true do
   it_behaves_like 'has logo support', image_max_height: 200, selector: '.logo'
   it_behaves_like 'has menu', dropdown_categories: false,
                   menu_item_selector: '.menu .item',

@@ -1,5 +1,5 @@
 ---
-name: Example
+name: Fabric
 description: Hello! This is an example theme to get you started on making great themes on Format.com.
 author: Format
 author_url: https://www.format.com
@@ -23,4 +23,4 @@ mobile_preview_images:
   - path: preview_images/1-mobile.jpg
 
 filter_attributes:
-  - vertical
+  - slideshow

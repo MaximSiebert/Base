@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Example theme code', theme: 'example' do
+describe 'Fabric theme code', theme: 'fabric' do
   it_behaves_like 'structure is correct', version: 2
   it_behaves_like 'coding style is correct'
   it_behaves_like 'has correct v3 variables.yml',
