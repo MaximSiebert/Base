@@ -9,7 +9,10 @@ describe 'Fabric theme frontend', theme: 'fabric', type: :feature, shared_sessio
                     find('.mobile-menu-toggle').click
                   }
   it_behaves_like 'page with social links', selector: '.social-desktop .social-link'
-  it_behaves_like 'has gallery support', lazy_load: true
+  it_behaves_like 'has slideshow gallery support', next_element_selector: '.swiper-button-next',
+                  prev_element_selector: '.swiper-button-prev',
+                  selector: '.swiper-slide-active',
+                  wait_callback: proc { sleep 0.5 }
   it_behaves_like 'has listing support', lazy_load: true,
                   title_selector: '.title-element',
                   selector: '.asset'
