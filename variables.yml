@@ -18,6 +18,7 @@ base_variables:
       - link_typography
       - link_typography.hover.color
       - menu_typography.hover.color
+      - menu_typography.selected.color
       - social_links_typography
       - social_links_typography.hover.color
 
