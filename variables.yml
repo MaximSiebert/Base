@@ -29,11 +29,13 @@ base_variables:
     affected_variables:
       - text_typography
       - menu_typography
+      - menu_category_typography
       - headline_typography
       - footer_typography
       - collection_header_typography
       - collection_caption_typography
       - gallery_caption_typography
+      - gallery_text_element
       - blog_title_typography
       - blog_body_typography
 
