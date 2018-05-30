@@ -21,6 +21,7 @@ base_variables:
       - menu_typography.selected.color
       - social_links_typography
       - social_links_typography.hover.color
+      - blog_title_typography.hover.color
 
   - id: base_text_color
     kind: color
@@ -61,10 +62,13 @@ base_variables:
     affected_variables:
       - text_typography
       - menu_typography
+      - menu_category_typography
+      - gallery_text_element
       - gallery_caption_typography
       - collection_header_typography
       - blog_title_typography
       - blog_body_typography
+      - blog_caption_typography
       - footer_typography
 
   - id: base_font_size
