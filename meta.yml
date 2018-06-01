@@ -10,6 +10,8 @@ skins:
   id: light
 - name: Dark
   id: dark
+- name: Bright
+  id: bright
 default_skin: light
 
 using_position:
