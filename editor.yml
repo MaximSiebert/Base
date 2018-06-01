@@ -68,6 +68,7 @@ drawers:
           - footer_typography
           - text_typography
           - link_typography
+          - gallery_header_typography
           - gallery_caption_typography
           - gallery_text_element
           - collection_header_typography
@@ -102,7 +103,6 @@ groups:
       - menu_position
       - menu_typography
       - menu_category_typography
-      - menu_text
       - menu_background_color
 
   - id: heading
@@ -124,6 +124,7 @@ groups:
 
   - id: gallery
     variables:
+      - gallery_header_typography
       - gallery_caption_typography
       - gallery_text_element
       - gallery_index

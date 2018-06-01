@@ -345,7 +345,7 @@ body.active {
   background-color: {{ theme.menu_background_color }};
   top: 0;
   bottom: 0;
-  padding: 0 30px 0 10px;
+  padding: 0 30px 0 30px;
   text-align: right;
   transform: translateX(-100%);
   transition: $transition-1;
@@ -392,12 +392,15 @@ body.active {
     transform: translateY(10%);
     opacity: 0;
     transition: $transition-1;
-    transition-delay: .4s;
+    transition-delay: .55s;
     padding: 80px 32px 80px 0;
     height: 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     position: relative;
-    right: -30px;
+    {% if theme.menu_position != "Left" %}
+      right: -30px;
+    {% endif %}
     @media #{$breakpoint-not-small} {
       padding-top: 120px;
     }
@@ -405,7 +408,9 @@ body.active {
       padding-bottom: 140px;
     }
     @media (pointer:fine) {
-      right: -30px;
+      {% if theme.menu_position != "Left" %}
+        right: -30px;
+      {% endif %}
     }
   }
   li {
@@ -785,6 +790,7 @@ body.gallery {
           padding-top: 30px;
           max-height: calc(100vh - 184px);
           overflow-y: scroll;
+          -webkit-overflow-scrolling: touch;
           overflow-x: hidden;
           width: calc(100% + 30px);
           &:after, &:before {
@@ -867,6 +873,7 @@ body.gallery {
       padding-bottom: 60px;
       max-height: calc(100vh - 184px);
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       overflow-x: hidden;
       width: calc(100% + 30px);
       &:after, &:before {
@@ -940,6 +947,7 @@ body.gallery {
   font-family: inherit;
   z-index: 2;
   width: 14px;
+  height: 1em;
   transition: $transition-2;
   &:focus {
     outline: none;
@@ -1012,6 +1020,7 @@ body.gallery {
   padding-left: 0;
   height: 100%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   @media #{$breakpoint-not-small} {
     padding-left: 30px;
     padding-right: 30px;
@@ -1165,6 +1174,10 @@ body.gallery {
 
 body.gallery .title-element.image {
   opacity: 0;
+}
+
+body.gallery .title-element {
+  {% css_block theme.gallery_header_typography %}
 }
 
 body.gallery .swiper-slide-active .title-element.image {

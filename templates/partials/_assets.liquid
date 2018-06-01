@@ -5,6 +5,8 @@
           <div class="{{ overlap }}asset swiper-slide image" data-hash="{{ forloop.index }}" data-color="{{ asset.dominant_color }}">
             {% if theme.gallery_style == 'No Overlap' and theme.gallery_dominant_background %}
               <div class="dominant-background fade-out" style="background: {{ asset.dominant_color }};"></div>
+            {% elsif theme.gallery_style == "No Overlap" and theme.gallery_dominant_background == false %}
+              <div class="dominant-background fade-out active"></div>
             {% endif %}
             <div class="swiper-slide-container">
                 {% assign ratioWidth = asset.image_dimensions_1600x1200[0] %}

@@ -50,7 +50,7 @@ base_variables:
       font-family: 
         light: Big Caslon FB Roman
         dark: Nobile
-        bright: Nobile
+        bright: Forma DJR Display Bold
       font-weight: normal
     affected_variables:
       - headline_typography
@@ -63,11 +63,12 @@ base_variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
     affected_variables:
       - text_typography
       - menu_typography
       - menu_category_typography
+      - gallery_header_typography
       - gallery_text_element
       - gallery_caption_typography
       - collection_header_typography
@@ -101,7 +102,7 @@ variables:
     value:
       light: "#EFEEE9"
       dark: "#1b1b1b"
-      bright: "#fdb717"
+      bright: "#FFB700"
 
   # --- Logo ---
 
@@ -148,12 +149,15 @@ variables:
       font-family:
         light: Big Caslon FB Roman
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       font-weight: 
         light: bold
         dark: normal
-        bright: normal
-      font-size: 14
+        bright: bold
+      font-size:
+        light: 14
+        dark: 14
+        bright: 18
       font-style: normal
       text-decoration: none
       hover:
@@ -177,8 +181,11 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
-      font-size: 14
+        bright: Poppins Regular
+      font-size:
+        light: 14
+        dark: 14
+        bright: 18
       line-height: 1.5
 
   - id: headline_typography
@@ -192,7 +199,7 @@ variables:
       font-family:
         light: Big Caslon FB Roman
         dark: Nobile
-        bright: Nobile
+        bright: Forma DJR Display Bold
       font-size: 36
       font-weight: normal
 
@@ -235,8 +242,11 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
-      font-size: 14
+        bright: Poppins Regular
+      font-size:
+        light: 14
+        dark: 14
+        bright: 18
 
 # ----------------- Site Menu -----------------
 
@@ -247,11 +257,11 @@ variables:
       color:
         light: "#555555"
         dark: "#AE9D88"
-        bright: "#AE9D88"
+        bright: "#FFFFFF"
       font-family:
         light: Big Caslon FB Roman
         dark: Nobile
-        bright: Nobile
+        bright: Forma DJR Display Bold
       font-size: 36
       font-weight: normal
       line-height: 1.2
@@ -259,7 +269,7 @@ variables:
         color:
           light: "#111111"
           dark: "#FFFFFF"
-          bright: "#FFFFFF"
+          bright: "#FFB700"
         text-decoration: 
           light: none
           dark: none
@@ -268,7 +278,7 @@ variables:
         color:
           light: "#111111"
           dark: "#FFFFFF"
-          bright: "#FFFFFF"
+          bright: "#FFB700"
         text-decoration: 
           light: none
           dark: none
@@ -281,13 +291,13 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       font-size: 18
       font-weight: normal
       color:
         light: "#888888"
         dark: "#FFFFFF"
-        bright: "#FFFFFF"
+        bright: "#FFB700"
 
   - id: menu_position
     label: Site Menu Items Position
@@ -295,20 +305,11 @@ variables:
     value: 
       light: Right
       dark: Center
-      bright: Center
+      bright: Left
     values:
       - Left
       - Center
       - Right
-
-  - id: menu_text
-    label: Menu Button Label
-    kind: text
-    notes: The text displayed on the menu bar.
-    value: 
-      light: "Menu"
-      dark: "Menu"
-      bright: "Menu"
 
   - id: menu_background_color
     label: Menu Background Color
@@ -320,6 +321,22 @@ variables:
 
 # ----------------- Gallery -----------------
 
+  - id: gallery_header_typography
+    label: Header Text
+    kind: typography
+    value:
+      color:
+        light: "#555555"
+        dark: "#FFFFFF"
+        bright: "#FFFFFF"
+      font-family:
+        light: Helvetica Neue
+        dark: Times New Roman
+        bright: Poppins Regular
+      font-style: normal
+      font-size: 18
+      line-height: 1.6
+
   - id: gallery_caption_typography
     label: Caption
     kind: typography
@@ -327,7 +344,7 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       color: 
         light: "#555555"
         dark: "#FFFFFF"
@@ -342,7 +359,7 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       color:
         light: "#555555"
         dark: "#FFFFFF"
@@ -351,7 +368,7 @@ variables:
       line-height: 1.5
 
   - id: gallery_index
-    label: "Show gallery index before gallery"
+    label: Show Gallery Index Before Gallery
     kind: boolean
     notes: Shows or hides the gallery index.
     value: false
@@ -368,7 +385,7 @@ variables:
       - No Overlap
 
   - id: gallery_dominant_background
-    label: "Show dominant background color for every image"
+    label: Show Dominant Background Color for Every Image
     kind: boolean
     notes: Shows or hides the dominant background color for every image.
     value: 
@@ -378,7 +395,7 @@ variables:
 
   - id: gallery_dominant_color
     kind: select
-    label: Shade of dominant color
+    label: Shade of Dominant Color
     value:
       light: Light
       dark: Dark
@@ -389,7 +406,7 @@ variables:
 
   - id: gallery_arrow_color
     kind: select
-    label: Gallery Previous and Next image arrow color
+    label: Gallery Previous and Next Image Arrow Color
     value:
       light: Dark
       dark: Light
@@ -411,7 +428,7 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       font-style: normal
       font-size: 18
       line-height: 1.6
@@ -427,7 +444,7 @@ variables:
       font-family:
         light: Big Caslon FB Roman
         dark: Nobile
-        bright: Nobile
+        bright: Forma DJR Display Bold
       font-style: normal
       font-weight: normal
       font-size: 60
@@ -445,7 +462,7 @@ variables:
       - Center
 
   - id: collection_dominant_color_hover
-    label: "Show Dominant Color on Hover"
+    label: Show Dominant Color on Hover
     kind: boolean
     notes: Shows or hides the Dominant color background on hover.
     value: 
@@ -455,7 +472,7 @@ variables:
 
   - id: collection_dominant_color
     kind: select
-    label: Shade of dominant color
+    label: Shade of Dominant Color
     value:
       light: Light
       dark: Dark
@@ -470,13 +487,13 @@ variables:
     value:
       light: Grid
       dark: Text
-      bright: Text
+      bright: Grid
     values:
       - Grid
       - Text
 
   - id: gallery_page_navigation
-    label: "Show gallery prev and next page navigation"
+    label: Show Collection Navigation
     kind: boolean
     notes: Shows or hides the gallery prev and next page navigation.
     value: true
@@ -491,7 +508,10 @@ variables:
         light: "#888888"
         dark: "#AAAAAA"
         bright: "#A37100"
-      font-size: 14
+      font-size:
+        light: 14
+        dark: 14
+        bright: 18
       font-weight: normal
       text-decoration: none
       hover:
@@ -507,7 +527,10 @@ variables:
     values:
       - Icon
       - Text
-    value: Text
+    value:
+      light: Text
+      dark: Text
+      bright: Icon
 
   - id: icon1
     kind: select
@@ -662,7 +685,7 @@ variables:
       font-family:
         light: Big Caslon FB Roman
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       color:
         light: "#555555"
         dark: "#FFFFFF"
@@ -684,7 +707,7 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
+        bright: Poppins Regular
       color:
         light: "#555555"
         dark: "#FFFFFF"
@@ -699,8 +722,11 @@ variables:
       font-family:
         light: Helvetica Neue
         dark: Times New Roman
-        bright: Times New Roman
-      font-size: 14
+        bright: Poppins Regular
+      font-size:
+        light: 14
+        dark: 14
+        bright: 18
 
   - id: blog_images_slideshow_color
     label: Slideshow Background Color
