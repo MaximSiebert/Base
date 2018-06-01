@@ -20,8 +20,10 @@ base_variables:
       - link_typography
       - link_typography.hover.color
       - menu_typography.hover.color
+      - menu_typography.selected.color
       - social_links_typography
       - social_links_typography.hover.color
+      - blog_title_typography.hover.color
 
   - id: base_text_color
     kind: color
@@ -32,11 +34,13 @@ base_variables:
     affected_variables:
       - text_typography
       - menu_typography
+      - menu_category_typography
       - headline_typography
       - footer_typography
       - collection_header_typography
       - collection_caption_typography
       - gallery_caption_typography
+      - gallery_text_element
       - blog_title_typography
       - blog_body_typography
 
@@ -63,10 +67,13 @@ base_variables:
     affected_variables:
       - text_typography
       - menu_typography
+      - menu_category_typography
+      - gallery_text_element
       - gallery_caption_typography
       - collection_header_typography
       - blog_title_typography
       - blog_body_typography
+      - blog_caption_typography
       - footer_typography
 
   - id: base_font_size

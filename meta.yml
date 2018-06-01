@@ -8,10 +8,13 @@ support: This a place for you to help users of this theme and how they can keep 
 skins:
 - name: Light
   id: light
+  path: skin_images/light.jpg
 - name: Dark
   id: dark
+  path: skin_images/dark.jpg
 - name: Bright
   id: bright
+  path: skin_images/dark.jpg
 default_skin: light
 
 using_position:
