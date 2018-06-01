@@ -713,7 +713,7 @@ variables:
         dark: "#FFFFFF"
         bright: "#FFFFFF"
       line-height: 1.7
-      font-size: 18
+      font-size: 14
 
   - id: blog_caption_typography
     label: Image Caption
