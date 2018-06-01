@@ -86,6 +86,7 @@ base_variables:
       - menu_typography
       - collection_header_typography
       - collection_caption_typography
+      - gallery_text_element
       - gallery_caption_typography
       - blog_title_typography
       - blog_body_typography
