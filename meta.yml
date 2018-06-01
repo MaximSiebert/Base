@@ -12,6 +12,9 @@ skins:
 - name: Dark
   id: dark
   path: skin_images/dark.jpg
+- name: Bright
+  id: bright
+  path: skin_images/dark.jpg
 default_skin: light
 
 using_position:
