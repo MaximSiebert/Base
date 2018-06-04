@@ -379,7 +379,7 @@ variables:
   - id: gallery_style
     kind: boolean
     label: Overlap Gallery Images
-    values:
+    value:
       light: true
       dark: true
       bright: false
@@ -387,8 +387,7 @@ variables:
   - id: gallery_dominant_background
     label: Show Dominant Background Color for Every Image
     kind: boolean
-    notes: Shows or hides the dominant background color for every image.
-    values: 
+    value:
       light: true
       dark: true
       bright: false
@@ -396,7 +395,7 @@ variables:
   - id: gallery_dominant_color
     kind: boolean
     label: Darken Dominant Color
-    values:
+    value:
       light: false
       dark: true
       bright: true
@@ -465,12 +464,12 @@ variables:
     value: 
       light: true
       dark: true
-      bright: false
+      bright: true
 
   - id: collection_dominant_color
     kind: boolean
     label: Darken Dominant Color
-    values:
+    value:
       light: false
       dark: true
       bright: true

@@ -139,12 +139,14 @@ img {
   padding-top: 30px;
   padding-right: 30px;
   z-index: 2;
+  display: none;
   @media #{$breakpoint-not-small} {
     left: 50%;
     transform: translateX(-50%);
     right: inherit;
     padding-left: 30px;
-    padding-right: 0;    
+    padding-right: 0;
+    display: block;
   }
 }
 
@@ -1073,7 +1075,6 @@ body.gallery {
     overflow: hidden;
     position: relative;
     p {
-      margin: 0;
       font-size: {{ theme.text_typography.font-size }}px;
       &:not(:first-child) {
         display: none;
@@ -1087,9 +1088,9 @@ body.gallery {
       right: 0;
       height: 50px;
       background: {{ theme.background_color }};
-      background: -moz-linear-gradient(top, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, {{ theme.background_color }} 100%); /* FF3.6-15 */
-      background: -webkit-linear-gradient(top, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, {{ theme.background_color }} 100%); /* Chrome10-25,Safari5.1-6 */
-      background: linear-gradient(to bottom, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, {{ theme.background_color }} 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      background: -moz-linear-gradient(top, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, darken({{ theme.background_color }}, 2%) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, darken({{ theme.background_color }}, 2%) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(darken({{ theme.background_color | color_to_rgb }}, 2%),0) 0%, darken({{ theme.background_color }}, 2%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='{{ theme.background_color }}', endColorstr='{{ theme.background_color }}',GradientType=0 ); /* IE6-9 */
     }
     @media #{$breakpoint-not-small} {
