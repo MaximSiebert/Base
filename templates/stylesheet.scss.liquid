@@ -267,7 +267,8 @@ body.active {
   position: fixed;
   top: 0;
   z-index: 5;
-  padding: 20px 0 30px 18px;
+  padding: 20px 0 30px 30px;
+  width: 100%;
   .logo {
     {% css_block theme.logo_typography %}
     margin: 0;
@@ -284,6 +285,7 @@ body.active {
   }
   @media #{$breakpoint-not-small} {
     padding: 30px 0 30px 30px;
+    width: auto;
   }
 }
 
@@ -473,7 +475,8 @@ body.active {
 
 .hamburger.nav-hamburger {
   display: block;
-  margin-right: 10px;
+  margin-left: auto;
+  margin-right: 18px;
   &:before, &:after {
     color: {{ theme.link_typography.color }};
   }
@@ -492,7 +495,6 @@ body.active {
   border: none;
   display: block;
   height: 40px;
-  margin: auto;
   width: 40px;
   position: relative;
   &:before, &:after {
@@ -1120,15 +1122,15 @@ body.gallery {
     display: block;
     transition: $transition-1;
     {% css_block theme.link_typography %}
-    &:hover {
-      {% css_block theme.link_typography.hover %}
-    }
   }
   &:focus {
     outline: none;
   }
   @media #{$breakpoint-not-small} {
     margin-left: 15px;
+    span:hover {
+      {% css_block theme.link_typography.hover %}
+    }
   }
 }
 
