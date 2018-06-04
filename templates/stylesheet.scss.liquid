@@ -289,7 +289,7 @@ body.active {
   position: fixed;
   text-align: left;
   bottom: 0;
-  padding: 30px 0 30px 30px;
+  padding: 30px 0 30px;
   z-index: 5;
   {% if theme.social_links_style == "Icon" %}
     display: -webkit-box;
@@ -329,6 +329,9 @@ body.active {
 }
 
 @media #{$breakpoint-not-small} {
+  .social {
+    padding-left: 30px;
+  }
   .social-desktop {
     display: block;
   }
@@ -393,12 +396,16 @@ body.active {
     opacity: 0;
     transition: $transition-1;
     transition-delay: .55s;
-    padding: 80px 32px 80px 0;
+    {% if theme.menu_position == "Right" %}
+      padding: 80px 32px 80px 0;
+    {% else %}
+      padding: 80px 0 80px;
+    {% endif %}
     height: 100%;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     position: relative;
-    {% if theme.menu_position != "Left" %}
+    {% if theme.menu_position == "Right" %}
       right: -30px;
     {% endif %}
     @media #{$breakpoint-not-small} {
@@ -408,7 +415,7 @@ body.active {
       padding-bottom: 140px;
     }
     @media (pointer:fine) {
-      {% if theme.menu_position != "Left" %}
+      {% if theme.menu_position == "Right" %}
         right: -30px;
       {% endif %}
     }
@@ -1201,7 +1208,7 @@ body.gallery .swiper-slide-active .title-element.image {
     right: 0;
     bottom: 0;
     top: 0;
-    {% if theme.gallery_dominant_color == 'Dark' %}
+    {% if theme.gallery_dominant_color %}
       background: #000;
       opacity: .7;
     {% else %}
@@ -1564,7 +1571,7 @@ body.listing {
       right: 0;
       bottom: 0;
       top: 0;
-      {% if theme.collection_dominant_color == 'Dark' %}
+      {% if theme.collection_dominant_color %}
         background: #000;
         opacity: .7;
       {% else %}

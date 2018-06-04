@@ -1,11 +1,11 @@
 {% for asset in page.assets %}
-  {% capture overlap %}{% if theme.gallery_style == 'Overlap' %}overlap {% endif %}{% endcapture %}
+  {% capture overlap %}{% if theme.gallery_style %}overlap {% endif %}{% endcapture %}
   {% case asset.type %}
       {% when 'image' %}
           <div class="{{ overlap }}asset swiper-slide image" data-hash="{{ forloop.index }}" data-color="{{ asset.dominant_color }}">
-            {% if theme.gallery_style == 'No Overlap' and theme.gallery_dominant_background %}
+            {% if theme.gallery_style == false and theme.gallery_dominant_background %}
               <div class="dominant-background fade-out" style="background: {{ asset.dominant_color }};"></div>
-            {% elsif theme.gallery_style == "No Overlap" and theme.gallery_dominant_background == false %}
+            {% elsif theme.gallery_style == false and theme.gallery_dominant_background == false %}
               <div class="dominant-background fade-out active"></div>
             {% endif %}
             <div class="swiper-slide-container">

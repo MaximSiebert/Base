@@ -368,45 +368,39 @@ variables:
       line-height: 1.5
 
   - id: gallery_index
-    label: Show Gallery Index Before Gallery
+    label: Show Gallery Overview First
     kind: boolean
-    notes: Shows or hides the gallery index.
+    notes: Shows or hides the gallery overview.
     value: false
 
   - id: gallery_style
-    kind: select
-    label: Gallery Style
-    value:
-      light: Overlap
-      dark: Overlap
-      bright: No Overlap
+    kind: boolean
+    label: Overlap Gallery Images
     values:
-      - Overlap
-      - No Overlap
+      light: true
+      dark: true
+      bright: false
 
   - id: gallery_dominant_background
     label: Show Dominant Background Color for Every Image
     kind: boolean
     notes: Shows or hides the dominant background color for every image.
-    value: 
+    values: 
       light: true
       dark: true
       bright: false
 
   - id: gallery_dominant_color
-    kind: select
-    label: Shade of Dominant Color
-    value:
-      light: Light
-      dark: Dark
-      bright: Dark
+    kind: boolean
+    label: Darken Dominant Color
     values:
-      - Light
-      - Dark
+      light: false
+      dark: true
+      bright: true
 
   - id: gallery_arrow_color
     kind: select
-    label: Gallery Previous and Next Image Arrow Color
+    label: Navigation Arrow Color
     value:
       light: Dark
       dark: Light
@@ -452,7 +446,7 @@ variables:
 
   - id: collection_caption_typography_alignment
     kind: select
-    label: Page Link Alignment
+    label: Text Layout Page Link Alignment
     value:
       light: Center
       dark: Center
@@ -471,15 +465,12 @@ variables:
       bright: false
 
   - id: collection_dominant_color
-    kind: select
-    label: Shade of Dominant Color
-    value:
-      light: Light
-      dark: Dark
-      bright: Dark
+    kind: boolean
+    label: Darken Dominant Color
     values:
-      - Light
-      - Dark
+      light: false
+      dark: true
+      bright: true
 
   - id: collection_layout
     kind: select
