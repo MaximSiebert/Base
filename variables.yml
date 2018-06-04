@@ -105,7 +105,7 @@ variables:
     value:
       light: "#EFEEE9"
       dark: "#1b1b1b"
-      bright: "#FFB700"
+      bright: "#1A1A1A"
 
   # --- Logo ---
 
@@ -215,7 +215,7 @@ variables:
       color:
         light: "#888888"
         dark: "#AAAAAA"
-        bright: "#A37100"
+        bright: "#FFB700"
       font-style: normal
       font-weight: normal
       text-decoration: none
@@ -464,7 +464,7 @@ variables:
     value: 
       light: true
       dark: true
-      bright: true
+      bright: false
 
   - id: collection_dominant_color
     kind: boolean
@@ -500,7 +500,7 @@ variables:
       color:
         light: "#888888"
         dark: "#AAAAAA"
-        bright: "#A37100"
+        bright: "#FFB700"
       font-size:
         light: 14
         dark: 14
