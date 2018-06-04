@@ -66,6 +66,7 @@ drawers:
           - menu_typography
           - menu_category_typography
           - footer_typography
+          - headline_typography
           - text_typography
           - link_typography
           - gallery_header_typography

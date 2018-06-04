@@ -5,7 +5,7 @@ base_variables:
     value:
       light: "#EFEEE9"
       dark: "#1b1b1b"
-      bright: "#FC4730"
+      bright: "#FFB700"
     affected_variables:
       - background_color
       - menu_background_color
@@ -84,8 +84,11 @@ base_variables:
       - text_typography
       - headline_typography
       - menu_typography
+      - menu_category_typography
       - collection_header_typography
       - collection_caption_typography
+      - gallery_text_element
+      - gallery_header_typography
       - gallery_caption_typography
       - blog_title_typography
       - blog_body_typography
