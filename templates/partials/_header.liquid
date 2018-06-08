@@ -1,9 +1,10 @@
 <header class="header">
   {% theme_include 'partials/logo' %}
-  <button class="mobile-menu-toggle mobile-menu-toggle-trigger">
-    <span>Menu</span>
-  </button>
 </header>
+<button class="mobile-menu-toggle mobile-menu-toggle-trigger">
+  {% comment %} <span>Menu</span> {% endcomment %}
+  <div class="hamburger hamburger-menu nav-hamburger nav-hamburger-desktop"></div>
+</button>
 <div class="overlay menu-close" onclick=""></div>
 {% theme_include 'partials/menu' %}
 <div class="social-desktop">
