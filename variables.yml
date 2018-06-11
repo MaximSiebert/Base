@@ -5,7 +5,7 @@ base_variables:
     value:
       light: "#EFEEE9"
       dark: "#1b1b1b"
-      bright: "#FFB700"
+      bright: "#000000"
     affected_variables:
       - background_color
       - menu_background_color
@@ -15,12 +15,13 @@ base_variables:
     value:
       light: "#555555"
       dark: "#FFFFFF"
-      bright: "#FFFFFF"
+      bright: "#FFB700"
     affected_variables:
       - link_typography
       - link_typography.hover.color
       - menu_typography.hover.color
       - menu_typography.selected.color
+      - menu_category_typography.color
       - social_links_typography
       - social_links_typography.hover.color
       - blog_title_typography.hover.color
@@ -34,7 +35,6 @@ base_variables:
     affected_variables:
       - text_typography
       - menu_typography
-      - menu_category_typography
       - headline_typography
       - footer_typography
       - collection_header_typography
@@ -163,6 +163,7 @@ variables:
         bright: 18
       font-style: normal
       text-decoration: none
+      line-height: 1.2
       hover:
         color: 
           light: "#888888"

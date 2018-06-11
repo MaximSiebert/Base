@@ -3,7 +3,7 @@
 history:
   1: Initial version.
 
-hidden: false
+hidden: true
 version: 1
 api_version: 2
 support:
@@ -17,5 +17,6 @@ support:
   sales: 1
   parent_page: 1
   base_vars: 1
+  context_menu: 1
 
 can_automatically_upgrade_to_versions: [1]

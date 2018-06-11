@@ -195,21 +195,21 @@ window.Theme.GalleryIndex = window.Theme.GalleryIndex || {
 
 window.Theme.Gallery = window.Theme.Gallery || {
   init: function() {
-    this.respVideo();
     this.fancybox();
   },
-  respVideo: function() {
-    reframe("iframe");
-  },
   fancybox: function() {
-    $("[data-fancybox]").fancybox({
-      baseClass: "boilerplate-slideshow",
-      animationDuration: 180,
-      transitionDuration: 180,
-      toolbar: false,
-      afterShow: function() {
-        $('.fancybox-slide--current iframe')[0].src += "&autoplay=1";
-      }
+    $('.video-overlay').on('click', 'a', function(){
+      $(this).next().addClass('active');
+      $(this).next().find("iframe").each(function() {
+        var iframeContent = $(this)[0];
+        if (iframeContent.contentWindow) {
+          iframeContent.contentWindow.postMessage('{"method":"play","value":""}', "*");
+          iframeContent.contentWindow.postMessage(
+            '{"event":"command","func":"' + "playVideo" + '","args":""}',
+            "*"
+          );
+        }
+      });
     });
   }
 };
@@ -244,9 +244,23 @@ var swiper = new Swiper('.swiper-container', {
       }
     },
     slideChangeTransitionStart: function () {
-      $('.swiper-slide-active').siblings().addClass(hideSib); 
-      $('.swiper-slide-active').next().removeClass(hideSib); 
+      $('.swiper-slide-active').siblings().addClass(hideSib);
+      $('.swiper-slide-active').next().removeClass(hideSib);
       $('.swiper-slide-active').prev().removeClass(hideSib);
+      if ($('.video-overlay-embed iframe')[0].contentWindow) {
+        $('.video-overlay-embed').removeClass('active');
+        $('.video-overlay-embed').find("iframe").each(function() {
+          var iframeContent = $(this)[0];
+          if (iframeContent.contentWindow) {
+            iframeContent.contentWindow.postMessage('{"method":"pause","value":""}', "*");
+            iframeContent.contentWindow.postMessage('{"method":"setCurrentTime","value":"1"}', "*");
+            iframeContent.contentWindow.postMessage(
+              '{"event":"command","func":"' + "stopVideo" + '","args":""}',
+              "*"
+            );
+          }
+        });
+      }
     },
     
   }

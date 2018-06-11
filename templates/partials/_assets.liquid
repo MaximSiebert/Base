@@ -32,11 +32,15 @@
       {% when 'video' %}
           <div class="{{ overlap }}asset swiper-slide video fade-out" data-hash="{{ forloop.index }}" data-color="">
             <div class="swiper-slide-container video-overlay">
-              <a class="fancybox.iframe" data-fancybox="" data-type="iframe" data-src="{{ asset.iframe_url }}">
+              <a class="video.iframe" data-type="iframe" data-src="{{ asset.iframe_url }}">
                 <div class="video-overlay-darken"></div>
                 <img src="{{ asset.thumbnail_url_960x0 }}" alt="" />
               </a>
-              {% comment %} {{ asset.embed_dimensions }} {% endcomment %}
+              <div class="video-overlay-embed">
+                <div class="video-overlay-embed-inner">
+                  <iframe class="video-iframe" src="{{ asset.iframe_url }}"></iframe>
+                </div>
+              </div>
             </div>
             {% if asset.copy %}
               <div class="caption fade-out">

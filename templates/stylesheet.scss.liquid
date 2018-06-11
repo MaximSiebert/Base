@@ -1,4 +1,3 @@
-@import 'scss_partials/jquery.fancybox';
 @import 'scss_partials/swiper';
 
 /*
@@ -55,14 +54,6 @@ body {
     padding-left: 30px;
     padding-top: 120px;
   }
-}
-
-body:not(.blog) .fancybox-bg {
-  background: rgba(0,0,0, .7);
-}
-
-body:not(.blog) .fancybox-iframe, body:not(.blog) .fancybox-slide--iframe .fancybox-content {
-  background: transparent;
 }
 
 /*
@@ -1364,6 +1355,38 @@ body.gallery .swiper-slide-active .title-element.image {
   {% else %}
     cursor: url({% asset img/arrow-left-dark.svg %}), default;
   {% endif %}
+}
+
+.video-overlay-embed {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  &.active {
+    display: block;
+    z-index: 6;
+  }
+}
+
+.video-overlay-embed-inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; 
+}
+
+.video-iframe {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
 }
 
 /*
