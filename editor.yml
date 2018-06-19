@@ -5,7 +5,6 @@ drawers:
       - id: advanced
         variables:
           - menu_position
-          - menu_text
           - gallery_index
           - gallery_style
           - gallery_dominant_background

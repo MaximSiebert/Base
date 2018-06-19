@@ -9,7 +9,10 @@
   {% unless page.content_editable %}<script src="{% asset_pipeline theme_api/v2/turbolinks-2.5.3-format.js %}"></script>{% endunless %}
   {% format_header %}
 </head>
-<body class="{% format_body_class %}">
+<body
+  class="{% format_body_class %}"
+  {% if preview %}data-no-turbolink="true"{% endif %}
+>
   {% content_header %}
   {{ content_for_layout }}
   {% format_footer %}
